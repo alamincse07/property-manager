@@ -3,16 +3,7 @@
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
-/**
- * Name:  Real Estate CMS Pro
- *
- * Author: Ramazan APAYDIN
- *         apaydinweb@gmail.com
- *
- * Website: http://ramazanapaydin.com
- *
- * Created:  04.15.2013
- */
+
 
 /**
  * @property admin_estate_model $admin_estate_model

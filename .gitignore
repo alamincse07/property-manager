@@ -1,6 +1,5 @@
 /.idea
-/assets/*
-!/assets/.gitkeep
+
 
 
 /uploaded/*

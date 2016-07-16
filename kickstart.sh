@@ -23,7 +23,7 @@ if  [ -n "$SERVICE" ];then
 fi
 
 ##### Run Redis and Webserver. Web server will link redis container and it will mount project Dirctory and virtualhost file. #####
-docker run -d -h web -v $(pwd):/var/www/html  -e SOLR_SERVER_PORT='8983' -e SITE_NAME='RENTALHOMES' -e SOLR_SERVER_IP='52.36.205.20' -e RENTBYOWNER_LB_ID='awseb-e-d-AWSEBLoa-156NJ1W7PL0ZH' -e RENTALHOMES_LB_ID='awseb-e-z-AWSEBLoa-IR6S6RX8U5A4' -e RENTERS_LB_ID='awseb-e-n-AWSEBLoa-1F5K6L8TPARUH' -p 80:80 --name web  rashidw3/httpd:production > /dev/null
+docker run -d -h web -v $(pwd):/var/www/html  -e SOLR_SERVER_PORT='8983' -e SITE_NAME='RENTALHOMES' -e SOLR_SERVER_IP='52.36.205.20' -e RENTBYOWNER_LB_ID='awseb-e-d-AWSEBLoa-156NJ1W7PL0ZH' -e RENTALHOMES_LB_ID='awseb-e-z-AWSEBLoa-IR6S6RX8U5A4' -e RENTERS_LB_ID='awseb-e-n-AWSEBLoa-1F5K6L8TPARUH' -p 80:80 --name web  rashidw3/webgeneric > /dev/null
 
 fullsolr=$(docker inspect --format '{{ .NetworkSettings.IPAddress }}' web)
 

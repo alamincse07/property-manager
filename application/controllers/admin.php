@@ -5997,13 +5997,16 @@ function outputXML($data,$root_node,$file_name){
    // $data=array('dfd'=>'rerer','dfdf'=>array('oop'=>'php','kry'=>'kop'));
     $this->load->library('Array2XML');
 
-    //\application\helpers\Generic::_setTrace($data);
+    $xml_path=dirname(BASEPATH)."/assets/admin/exports/";
+    #\application\helpers\Generic::_setTrace($data);
 
-//print 'gererer';
+
+//print dirname(BASEPATH)."/assets/admin/exports/";
 //print $file_name;
     //$xml = Array2XML::createXML('listings', $data);
 
-    $vrbo_file_path='assets/admin/exports/'.$file_name;
+    chmod($xml_path, 0777);
+    $vrbo_file_path=$xml_path.$file_name;
 
   //  print $vrbo_file_path;
 
@@ -6012,7 +6015,8 @@ function outputXML($data,$root_node,$file_name){
 
 }
 function  outputCSV($data, $file_name) {
-    $vrbo_file_path='assets/admin/exports/'.$file_name;
+    $xml_path=dirname(BASEPATH)."/assets/admin/exports/";
+    $vrbo_file_path=$xml_path.$file_name;
 
     $output = fopen($vrbo_file_path.".csv",'w') or die("Can't open ".$vrbo_file_path);
     $key=array_keys($data[0]);

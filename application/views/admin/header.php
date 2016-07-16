@@ -50,7 +50,7 @@
         }
 
         var SITE_URL = baseUrl();
-        var BASE_URL = SITE_URL + 'vacation_rental/';
+        var BASE_URL = SITE_URL + '';
     </script>
     <style>
         .user_info {

@@ -96,17 +96,17 @@ if ($success) {
     <!--image upload by js-->
 
 
-   <!-- <div class="control-group">
-        <label class="control-label photo">
+    <div class="control-group">
+        <!--<label class="control-label photo">
             <?php /*echo lang('estate_add_photo', 'photo'); */?>
             <?php /*echo form_upload('userfile', '', 'id="userfile"');
             echo (isset($error)) ? $error : ''; */?>
-        </label>
+        </label>-->
 
         <div class="controls">
-            <link href="<?php /*echo base_url(); */?>assets/admin/js/jquery/uploadify_31/uploadify.css" type="text/css"
+            <link href="<?php echo base_url(); ?>assets/admin/js/jquery/uploadify_31/uploadify.css" type="text/css"
                   media="screen" rel="stylesheet"/>
-            <script src="<?php /*echo base_url(); */?>assets/admin/js/jquery/uploadify_31/jquery.uploadify-3.1.min.js"
+            <script src="<?php echo base_url(); ?>assets/admin/js/jquery/uploadify_31/jquery.uploadify-3.1.min.js"
                     type="text/javascript"></script>
             <script type="text/javascript">
 
@@ -126,10 +126,10 @@ if ($success) {
 
                     });
 
-                    var base_url = '<?php /*echo base_url(); */?>';
+                    var base_url = '<?php echo base_url(); ?>';
 
                     $('textarea.tinymce').tinymce({
-                        script_url: '<?php /*echo base_url() */?>assets/admin/js/tiny_mce/tiny_mce.js',
+                        script_url: '<?php echo base_url() ?>assets/admin/js/tiny_mce/tiny_mce.js',
                         theme: "advanced",
                         plugins: "autolink,lists,pagebreak,style,layer,table,save,advhr,advimage,advlink,emotions,iespell,inlinepopups,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,fullscreen,noneditable,visualchars,nonbreaking,xhtmlxtras,template,advlist",
                         theme_advanced_buttons1: "save,newdocument,|,bold,italic,underline,strikethrough,|,justifyleft,justifycenter,justifyright,justifyfull,|,cut,copy,paste,pastetext,pasteword,|,search,replace,|,bullist,numlist",
@@ -142,7 +142,7 @@ if ($success) {
                         theme_advanced_resizing: true,
                         height : "400"
                     });
-                    $('#userfile').uploadify({
+                    /*$('#userfile').uploadify({
                         'auto': true,
                         'swf': base_url + 'assets/admin/js/jquery/uploadify_31/uploadify.swf',
                         'uploader': base_url + 'index.php/uploadify/do_upload',
@@ -151,7 +151,7 @@ if ($success) {
                         'fileTypeDesc': 'Image Files (.jpg,.bmp,.png,.tif)',
                         'fileSizeLimit': '5MB',
                         'fileObjName': 'userfile',
-                        'buttonText': '<?php /*echo lang('estate_add_photo_btn')*/?>',
+                        'buttonText': '<?php echo lang('estate_add_photo_btn')?>',
                         'multi': true,
                         'removeCompleted': true,
                         'onUploadSuccess': function (file, data, response) {
@@ -159,14 +159,14 @@ if ($success) {
                             $('.thumb').append('<a class="deletelink" data-cc="confirm" target="_blank" href="' + base_url + 'index.php/uploadify/delete_file/' + obj.file_name + '"><img src="' + base_url + 'uploads/thumbs/' + obj.file_name + '" /></a>');
                             $('.photos').append('<input type="hidden" name="photo[]" value="' + obj.file_name + '" />');
                         }
-                    });
+                    });*/
 
                 });
             </script>
         </div>
 
     </div>
-    <div class="control-group">
+    <!--<div class="control-group">
         <div class="photos"></div>
     </div>
     <div class="control-group">
@@ -182,8 +182,8 @@ if ($success) {
 
 
         </div>
-    </div>
-    -->
+    </div>-->
+
 
 
     <!--image upload by putting url-->

@@ -1,0 +1,1 @@
+----propID is the foreign key of propertyfield tbl

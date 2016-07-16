@@ -61,7 +61,7 @@ echo $sidebar;
             ,success: function(data) {
 
                 console.log(BASE_URL+"admin/exportproperty?file_type="+file_type+"&feed="+file_name);
-                /*window.location = BASE_URL+"admin/exportproperty?file_type="+file_type+"&feed="+file_name;*/
+                window.location = BASE_URL+"admin/exportproperty?file_type="+file_type+"&feed="+file_name;
             }
             ,error:
                 function()

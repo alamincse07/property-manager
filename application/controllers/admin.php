@@ -6008,7 +6008,7 @@ function outputXML($data,$root_node,$file_name){
     chmod($xml_path, 0777);
     $vrbo_file_path=$xml_path.$file_name;
 
-  //  print $vrbo_file_path;
+   // print $vrbo_file_path;
 
     $xml = Array2XML::createXML($root_node, $data);
     $xml->save($vrbo_file_path.'.xml');
@@ -8223,8 +8223,8 @@ return $array;
     public static function DownloadFile($name,$type){
 
         $file_name=$name.'.xml';
-        $file_path='assets/admin/exports/'.$file_name;
-
+        //$file_path='assets/admin/exports/'.$file_name;
+        $file_path=dirname(BASEPATH)."/assets/admin/exports/".$file_name;
 
         if(!file_exists($file_path)){
             die('sorry no file');

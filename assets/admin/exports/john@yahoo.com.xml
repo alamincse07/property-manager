@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<property_data>
+  <property>
+    <property_details>
+      <currency>USD</currency>
+      <owner_id>alamin@w3engineers.com</owner_id>
+      <telephone>+8954512545</telephone>
+      <property_id>PM-26</property_id>
+      <unit_size_units>meter</unit_size_units>
+      <property_type>Apartment</property_type>
+      <bathroom_count>4</bathroom_count>
+      <occupancy>6</occupancy>
+      <unit_size>100</unit_size>
+      <bedroom_count>4</bedroom_count>
+      <check_out/>
+      <property_name>Selma vacation  property</property_name>
+      <url>https://www.flipkey.com/sigatoka-villa-rentals/p1905692/</url>
+    </property_details>
+    <property_descriptions>&lt;p&gt;Absolute private beachfront property on the beautiful coral coast. Perfect for people who simply wants to relax and unwind and connect with nature. You can go for snorkeling and kayaking, hiking, horse riding and alot more. Located Between world famous Natadola Beach and Shangrilas fijian resort. organic restaurant and limestone cave on site!&lt;/p&gt;</property_descriptions>
+    <property_addresses>
+      <city>selma</city>
+      <location_name>water ave</location_name>
+      <zip>80265</zip>
+      <address1>water ave</address1>
+      <precision>coord</precision>
+      <longitude>-86.99052569999998</longitude>
+      <show_exact_address>1</show_exact_address>
+      <state>Alabama</state>
+      <country>United States</country>
+      <latitude>32.4125089</latitude>
+    </property_addresses>
+    <property_rate_summary>
+      <day_max_rate>50</day_max_rate>
+      <week_min_rate>300</week_min_rate>
+      <week_max_rate>300</week_max_rate>
+      <day_min_rate>50</day_min_rate>
+      <minimum_length>4</minimum_length>
+    </property_rate_summary>
+    <property_amenities>
+      <property_amenity>Sea View</property_amenity>
+      <property_amenity>Near the sea</property_amenity>
+      <property_amenity>Street No</property_amenity>
+      <property_amenity>Park</property_amenity>
+    </property_amenities>
+    <property_photos>
+      <property_photo>https://tap1.fkimg.com/media/vr-splice-j/02/f2/a1/e4.jpg</property_photo>
+      <property_photo>https://tap1.fkimg.com/media/vr-splice-j/02/f2/a1/e4.jpg</property_photo>
+      <property_photo>https://tap1.fkimg.com/media/vr-splice-j/02/f2/a1/e4.jpg</property_photo>
+    </property_photos>
+    <booked_dates>
+      <booked_date>2016-07-21</booked_date>
+      <booked_date>2016-07-22</booked_date>
+      <booked_date>2016-07-27</booked_date>
+      <booked_date>2016-07-28</booked_date>
+      <booked_date>2016-07-29</booked_date>
+      <booked_date>2016-07-30</booked_date>
+    </booked_dates>
+    <property_rates>
+      <property_rate>
+        <end_date>2016-08-04</end_date>
+        <start_date>2016-07-23</start_date>
+        <label>christmas time</label>
+        <week_max_rate>350</week_max_rate>
+        <minimum_length>7</minimum_length>
+        <turn_day/>
+        <is_changeover_day_defined/>
+        <week_min_rate>50</week_min_rate>
+        <min_stay_unit>night</min_stay_unit>
+        <min_stay_count>7</min_stay_count>
+      </property_rate>
+    </property_rates>
+  </property>
+</property_data>

@@ -1,0 +1,653 @@
+@CHARSET "UTF-8";
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600&subset=latin,latin-ext);
+
+body {
+    background: #031C26;
+    font-size:13px;
+}
+
+.auth body {
+    background: url("../images/head-back.png") repeat scroll 0 0 transparent;
+    font-size:13px;
+}
+
+* {
+    outline: 0;
+}
+
+a:hover {
+    text-decoration: none;
+    outline: 0;
+}
+
+a:active,a:visited,a:FOCUS {
+    text-decoration: none;
+    outline: 0;
+}
+
+h1,h2,h3{
+    font-family: 'Open Sans', sans-serif;
+    color: #575655;
+    font-weight: 600;
+    margin: 0 0 20px;
+}
+
+h1{
+    font-size: 30px;
+}
+
+/*------------  Top Menu ----------*/
+.navbar .nav.pull-right.search {
+    top: 10px;
+    margin-right: 10px;
+}
+
+.search form {
+    margin: 0;
+}
+
+.navbar-inner .search button {
+    margin-top: 0;
+}
+
+.navbar {
+    margin-bottom: 0;
+}
+
+.navbar-inverse .navbar-inner {
+    background: url('../images/navback.png') repeat-x top;
+    border-radius: 0;
+    height: 45px;
+    padding-top: 5px;
+    filter:none;
+}
+
+.navbar .brand{
+    padding: 13px 20px;
+}
+
+.navbar .nav > li > a{
+    padding: 13px 15px;
+    color:#CCC;
+    text-shadow: 0 1px 1px #000000;
+    border-left: 1px solid #041F2A;
+    border-right: 1px solid #041F2A;
+    margin-right: -1px;
+}
+.navbar .divider-vertical{
+    height: 45px;
+}
+
+.navbar-inner i {
+    font-size: 15px;
+}
+
+.dropdown-menu{
+    border-radius: 0;
+}
+.dropdown-menu > li > a:hover{
+    background: #1BADE8;
+}
+
+/*------------  Huge Menu ----------*/
+.hugeMenu {
+    border-bottom: 1px solid #E5E5E5;
+    display: inline-block;
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+    width: 100%;
+}
+
+.hugeMenu span {
+    display: block;
+}
+
+.hugeMenu .span2 i {
+    font-size: 50px;
+}
+
+.btn-info{
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+    color:#FFF;
+}
+
+.btn-info {
+    color: #FFFFFF;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    background-color: #022837;
+    *background-color: #022837;
+    background-image: -moz-linear-gradient(top, #436370, #022837);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#436370), to(#022837));
+    background-image: -webkit-linear-gradient(top, #436370, #022837);
+    background-image: -o-linear-gradient(top, #436370, #022837);
+    background-image: linear-gradient(to bottom, #436370, #022837);
+    background-repeat: repeat-x;
+    border-color: #022837;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#436370', endColorstr='#022837', GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+.btn-info:hover,
+.btn-info:active,
+.btn-info.active,
+.btn-info.disabled,
+.btn-info[disabled] {
+    color: #FFFFFF;
+    background-color: #022837;
+    *background-color: #003bb3;
+}
+
+/*------------  Sidebar Accordion ----------*/
+.sidebar a {
+    color: #EEE;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+    font-weight: 600;
+
+}
+
+a.accordion-toggle:hover,.nav > li > a:focus  {
+    background: #111;
+    color:#FFF;
+}
+
+.nav-list > li > a{
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+    padding: 7px 25px;
+    font-weight: normal;
+}
+.nav-list > li > a:hover{
+    background: #111;
+    color:#FFF;
+}
+
+.accordion-heading .accordion-toggle {
+    outline: 0;
+}
+
+.accordion-group {
+    border : 0;
+    border-bottom: 1px solid #092C36;
+    border-top: 1px solid #011218;
+    border-radius: 0 0 0 0;
+    margin-bottom: 0;
+}
+
+.accordion-heading {
+    background: #224959;
+}
+
+.accordion-body{
+    background: #162F38;
+}
+
+.accordion{
+    margin: 0 -32px 0 0;
+}
+
+.accordion-group i {
+    margin-right: 5px;
+    opacity: 0.7;
+}
+
+.active {
+    font-weight: bold;
+}
+
+.search{
+
+    margin: 10px -20px 10px 10px;
+}
+
+#sss{
+font-size: 12px;
+padding-left: 10px;
+padding-right: 8px;
+width: 100%;
+}
+
+.profil{
+border-bottom: 1px solid #0D3E51;
+border-top: 1px solid #0D3E51;
+color: #FFFFFF;
+margin: 10px -20px 20px 10px;
+padding-bottom: 10px;
+padding-top: 10px;
+}
+
+.profil i{
+    color: #FFFFFF;
+    float: left;
+    font-size: 40px;
+    margin-right: 10px;
+}
+
+.profil a{
+    color: #CCCCCC;
+    font-size: 12px;
+}
+
+.profil span{
+    line-height: 23px;
+}
+
+.profil strong{
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: bottom;
+    width: 72px;
+}
+
+/*------------  Footer Area ----------*/
+#footer{
+    background: url("../images/fooback.png") repeat-x scroll center bottom transparent;
+    color: #BBBBBB;
+    display: table;
+    height: 50px;
+    line-height: 43px;
+    text-align: center;
+    text-shadow: 0 1px 0 #000000;
+    width: 100%;
+}
+
+#footer a{
+    color:#DDD;
+}
+
+/*------------  Content Area ----------*/
+.span10.content {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #E5E5E5;
+    padding: 20px;
+    position: relative;
+    z-index: 100;
+    min-height: 650px;
+    border-top: 5px solid #1BADE8;
+    border-left: 5px solid #1BADE8;
+    border-bottom: 5px solid #1BADE8;
+    border-right: 0;
+}
+
+.content .alert p{
+    margin-bottom: 0;
+}
+
+.contentArea {
+}
+
+.content .span8 .btn,.contentArea .btn {
+    height: 20px;
+}
+
+.thumb{
+    padding-bottom: 0;
+    padding-right: 0;
+}
+
+.thumb img{
+    height: 80px;
+    width: 125px;
+}
+
+.thumb a{
+    position: relative;
+    border: 1px solid #AAAAAA;
+    display: inline-block;
+    list-style-type: none;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    max-width: 125px;
+}
+
+.thumb a:hover:after{
+    background: none repeat scroll 0 0 #9DA0A4;
+    background: rgba(0,0,0,0.4);
+    color: #FFFFFF;
+    content: "DELETE";
+    font-family: "Open Sans";
+    font-size: 15px;
+    font-weight: 500;
+    height: 100%;
+    left: 0;
+    line-height: 75px;
+    position: absolute;
+    text-align: center;
+    text-shadow: 0 1px #000000;
+    top: 0;
+    width: 100%;
+}
+
+.photo label {
+    display: inline-block;
+    height: 30px;
+    line-height: 40px;
+    margin-bottom: 0;
+}
+
+.mediapanel a {
+    max-width: 175px;
+}
+
+.mediapanel a:hover:after{
+    background: none repeat scroll 0 0 #9DA0A4;
+    background: rgba(0,0,0,0.4);
+    color: #FFFFFF;
+    content: "DELETE";
+    font-family: "Open Sans";
+    font-size: 15px;
+    font-weight: 500;
+    height: 100%;
+    left: 0;
+    line-height: 120px;
+    position: absolute;
+    text-align: center;
+    text-shadow: 0 1px #000000;
+    top: 0;
+    width: 100%;
+}
+
+.mediapanel img {
+    width: 175px;
+    height: 120px;
+}
+
+.blog .thumb a{
+    margin-right: 0;
+    max-width: 100%;
+}
+
+.blog .thumb img {
+    width: 100%;
+    height: 100%;
+}
+
+.blog .thumb a:hover:after {
+    line-height: 165px;
+}
+
+.blog .uploadify-queue{
+    margin: 0;
+}
+
+.content .well .checkbox {
+    display: inline-block;
+    width: 160px;
+}
+
+.buildOption .control-group {
+    margin-bottom: 0;
+    margin-top: 5px;
+}
+
+.span4 .well-small .control-group{
+    margin-bottom: 0;
+}
+
+.checboxAdd h3{
+    margin: 10px 0 0;
+    line-height: 30px;
+    font-size: 20px;
+    color:#555;
+}
+
+.checboxAdd hr{
+    line-height: 30px;
+    margin: 5px 0 10px;
+}
+
+h3.control-label{
+    font-size: 20px;
+    line-height: 26px;
+    margin: 0;
+    color:#555;
+}
+
+.btn i{
+    vertical-align: middle;
+}
+
+.btn {
+    font-size: 13px;
+}
+
+.pagination{
+    margin:20px 0 0;
+}
+
+.content form {
+    margin: 0;
+}
+
+.controls.emlakoptions > label{
+    margin-bottom: 0;
+    margin-top: 7px;
+}
+
+.alert{
+    border-radius: 0;
+}
+
+.widget .thumb textarea{
+    height: 82px;
+    margin: 0;
+}
+
+.statics .widget-body {
+    padding: 0;
+}
+
+.stat-box{
+    background-color: #EEEEEE;
+    border-radius: 3px 3px 3px 3px;
+    color: #FFFFFF;
+    display: inline-block;
+    height: 90px;
+    margin: 4px auto;
+    min-height: 90px;
+    text-align: center;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+    width: 100%;
+}
+
+.stat-text{
+    display: block;
+    font-size: 1.2em;
+    font-weight: 600;
+    margin-top: -5px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.count span{
+    font-size: 12px;
+}
+
+.stat-box .count{
+    font-size: 2em;
+    font-weight: 600;
+    line-height: 2.5em;
+    padding-left: 5px;
+}
+
+.stat-box .icon-large{
+    font-size: 1.8em;
+    vertical-align: -10%;
+}
+
+.stat-box.medium-blue{
+    background: none repeat scroll 0 0 #67A0BE;
+    border: 1px solid #5595B6;
+}
+
+.stat-box.text-blue{
+    background: none repeat scroll 0 0 #33566A;
+    border: 1px solid #2B4859;
+}
+
+.stat-box.dark-blue{
+    background: none repeat scroll 0 0 #50769B;
+    border: 1px solid #47698A;
+}
+
+.stat-box.border-blue{
+    background: none repeat scroll 0 0 #7998AA;
+    border: 1px solid #698CA0;
+}
+
+.count sup, .count sub{
+    font-size: 12px;
+}
+
+sub {
+    bottom:0;
+}
+
+/*------ Table -----*/
+.content td {
+    max-width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+td.action, th.action{
+    text-align: center;
+    width: 10%;
+}
+
+.action i{
+    font-size: 20px;
+    margin-left: 3px;
+}
+
+/*------ Tinymce -----*/
+.content .defaultSkin table.mceLayout tr.mceLast td {
+    width: 100%;
+    min-width: 100%;
+}
+
+.content .defaultSkin table.mceLayout {
+    width: 100%;
+}
+
+/*------------  Login-Register Form ----------*/
+.loginForm {
+    margin: 0 auto;
+    display: table;
+    width: 400px;
+    margin-top: 100px;
+}
+
+.loginForm .alert p {
+    margin: 0;
+    padding: 0;
+}
+
+.loginFormInner {
+    background: none repeat scroll 0 0 #FFFFFF;
+    padding: 0;
+    border-radius: 4px;
+    box-shadow: 0 0 3px 0 #111111;
+}
+
+.loginForm .loginTitle {
+    background: #636363; /* Old browsers */
+    background: -moz-linear-gradient(top,  #636363 0%, #282828 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#636363), color-stop(100%,#282828)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #636363 0%,#282828 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #636363 0%,#282828 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #636363 0%,#282828 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #636363 0%,#282828 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#636363', endColorstr='#282828',GradientType=0 ); /* IE6-9 */
+    line-height: 40px;
+    margin-bottom:20px;
+    font-size: 20px;
+    font-weight: 500;
+    color: #EEE;
+    text-align: center;
+    text-shadow: 1px 1px 0px #000;
+    border-bottom: 1px solid #cfcfcf;
+    border-radius: 3px 3px 0 0;
+    font-family: 'Open Sans';
+}
+
+.loginForm form {
+    padding: 0px 20px 20px 20px;
+    margin-bottom:0;
+}
+
+.loginForm .alert.alert-error, .loginForm .alert.alert-success {
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size :12px;
+}
+
+.loginForm .alert .close{
+    font-size :16px;
+}
+
+.loginFooter a {
+    font-size: 12px;
+    text-shadow: 0 1px #FFFFFF;
+}
+
+.loginForm input[type="submit"], .loginForm input[type="button"] {
+    height: 30px;
+}
+
+.loginForm input[type="text"],.loginForm input[type="password"]{
+    padding: 8px 6px;
+}
+
+.loginFormInner p.forgotP {
+    line-height: 15px;
+    margin-bottom: 5px;
+}
+
+.loginFormInner p a, .loginForm label {
+    font-size : 12px;
+}
+
+.loginButton {
+    text-align: right;
+}
+
+/*------ Register Form -----*/
+.registerForm{
+}
+
+.registerForm .form-horizontal .controls {
+    margin-left: 110px;
+}
+
+.registerForm .form-horizontal .control-label {
+    width: 100px;
+    padding-top: 8px;
+}
+
+.registerForm .input-prepend .add-on {
+    height: 16px;
+    padding: 9px 5px;
+}
+
+.registerForm .form-horizontal .control-group {
+    margin-bottom: 15px;
+}
+
+.footer{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.footer a{
+    color:#EEE;
+}
+
+.footer a:hover{
+    color:#FFF;
+}
+
+

@@ -73,7 +73,7 @@ if ($success) {
 <div class="row-fluid">
 <div class="span8">
 
-    <div class="control-group">
+    <div class="control-group required">
         <label class="control-label"><?php echo lang('estate_add_title', 'title'); ?></label>
 
         <div class="controls">
@@ -151,7 +151,7 @@ if ($success) {
                         'fileTypeDesc': 'Image Files (.jpg,.bmp,.png,.tif)',
                         'fileSizeLimit': '5MB',
                         'fileObjName': 'userfile',
-                        'buttonText': '<?php echo lang('estate_add_photo_btn')?>',
+                        'buttonText': '<?php //echo lang('estate_add_photo_btn')?>',
                         'multi': true,
                         'removeCompleted': true,
                         'onUploadSuccess': function (file, data, response) {
@@ -193,6 +193,7 @@ if ($success) {
 
         <h3>Image URLs</h3>
         <hr/>
+        (The first photo will be taken as the default listing image)
         <div>
             <input class="btn btn-medium btn-primary" type="button" id="image_add" value="Add Images"/>
             <!-- <input class="btn btn-medium btn-primary" type="button" id="rate-delete-btn" value="Delete Last"/>-->
@@ -388,7 +389,7 @@ if ($success) {
             echo form_input($gsm); ?>
         </div>
     </div>
-    <div class="control-group">
+    <div class="control-group required">
         <label class="control-label">Property Contact Email</label>
 
         <div class="controls">
@@ -434,7 +435,7 @@ if ($success) {
         </div>
     </div>-->
     <hr/>
-    <div class="control-group">
+    <div class="control-group hidden">
         <div id="custom-date-format">
             <h4>Select not available dates</h4>
 
@@ -452,29 +453,31 @@ if ($success) {
 
     <hr/>
 
-    <div class="control-group">
-        <label class="control-label"><?php echo lang('estate_add_room', 'room'); ?></label>
+    <div class="control-group required">
+        <label class="control-label">Number of Rooms</label>
 
         <div class="controls">
-            <?php echo form_dropdown('room', $room, '', 'class="span"'); ?>
+            <!-- --><?php /*echo form_dropdown('room', $room, '', 'class="span"'); */?>
+            <?php echo form_input( $room); ?>
         </div>
     </div>
-    <div class="control-group">
-        <label class="control-label">Number of Sleep</label>
+    <div class="control-group required">
+        <label class="control-label">Sleeps #</label>
 
         <div class="controls">
             <?php $sleep['class'] = 'span';
             echo form_input($sleep); ?>
         </div>
     </div>
-    <div class="control-group">
-        <label class="control-label"><?php echo lang('estate_add_bathroom', 'bathroom'); ?></label>
+    <div class="control-group required">
+        <label class="control-label">Number of Bedrooms</label>
 
         <div class="controls">
-            <?php echo form_dropdown('bathroom', $bathroom, '', 'class="span"'); ?>
+            <?php /*echo form_dropdown('bathroom', $bathroom, '', 'class="span"'); */?>
+            <?php echo form_input( $bathroom); ?>
         </div>
     </div>
-    <div class="control-group">
+    <div class="control-group hidden">
         <label class="control-label"><?php echo lang('estate_add_heating', 'heating'); ?></label>
 
         <div class="controls">
@@ -485,7 +488,8 @@ if ($success) {
         <label class="control-label"><?php echo lang('estate_add_squaremeter', 'squaremeter'); ?></label>
 
         <div class="controls">
-            <?php echo form_dropdown('squaremeter', $squaremeter, '', 'class="span"'); ?>
+            <?php /*echo form_dropdown('squaremeter', $squaremeter, '', 'class="span"'); */?>
+            <?php echo form_input( $squaremeter); ?>
         </div>
     </div>
 
@@ -493,7 +497,8 @@ if ($success) {
         <label class="control-label">Sqaure Foot</label>
 
         <div class="controls">
-            <?php echo form_dropdown('squarefoot', $squaremeter, '', 'class="span"'); ?>
+            <?php /*echo form_dropdown('squarefoot', $squaremeter, '', 'class="span"'); */?>
+            <?php echo form_input( $squarefoot); ?>
         </div>
     </div>
     <!--<div class="control-group">
@@ -507,7 +512,8 @@ if ($success) {
         <label class="control-label"><?php echo lang('estate_add_floor', 'floor'); ?></label>
 
         <div class="controls">
-            <?php echo form_dropdown('floor', $floor, '', 'class="span"'); ?>
+           <!-- --><?php /*echo form_dropdown('floor', $floor, '', 'class="span"'); */?>
+            <?php echo form_input( $floor); ?>
         </div>
     </div>
     <hr/>
@@ -525,33 +531,7 @@ if ($success) {
                     echo lang('estate_add_showcase') */?></label>-->
             </div>
         </div>
-        <div class="control-group">
-            <h3 class="control-label">Feed listing to</h3>
-
-            <div class="controls emlakoptions">
-                 <label><?php echo form_checkbox('fk', 1, true);
-                    echo 'Flip Key' ?></label>
-               <!-- <label><?php /*echo form_checkbox('vrbo', 1, true);
-                    echo 'VRBO'*/?></label>
-                <label><?php /*echo form_checkbox('hw', 1, true);
-                    echo 'Home Away'*/?></label>
-
-                <label><?php /*echo form_checkbox('vast', 1, true);
-                    echo 'Vast' */?></label>
-                <label><?php /*echo form_checkbox('otalo', 1, true);
-                    echo 'Otalo'*/?></label>
-                <label><?php /*echo form_checkbox('airbnb', 1, true);
-                    echo 'Airbnb'*/?></label>
-
-                <label><?php /*echo form_checkbox('ht', 1, true);
-                    echo 'Housetrip' */?></label>
-                <label><?php /*echo form_checkbox('bk', 1, true);
-                    echo 'Booking.com'*/?></label>
-                <label><?php /*echo form_checkbox('rm', 1, true);
-                    echo 'Roomorama'*/?></label>
--->
-            </div>
-        </div>
+        <div class="control-group"></div>
     </div>
 </div>
 </div>

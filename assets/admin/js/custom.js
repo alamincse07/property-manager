@@ -40,7 +40,7 @@ $(document).ready(function () {
     $(".tip").tooltip();
 
     /* ------- Country Selection Ajax Load ------- */
-    $('.country').bind('change click', function () {
+    $('.country').bind('change', function () {
         flag = $('.country').val();
         $('.province').empty();
         $.getJSON($baseUrl + 'index.php/admin/estateProvince/' + encodeURI(flag), function (JSON) {

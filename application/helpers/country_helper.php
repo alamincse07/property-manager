@@ -1,19 +1,10 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-/**
- * Name:  Real Estate CMS Pro
- *
- * Author: Ramazan APAYDIN
- *         apaydinweb@gmail.com
- *
- * Website: http://ramazanapaydin.com
- *
- * Created:  04.15.2013
-*/
+
 function countryList($activeCountry = NULL) {
 	$country = array(
-			"-" => "Select Country",
+			"" => "Select Country",
 			"United States" => "United States",
-			//"Turkey" => "Turkey",
+			"Canada" => "Canada",
 	);
 	if ($activeCountry != NULL) {
 		return $country[$activeCountry];
@@ -23,7 +14,7 @@ function countryList($activeCountry = NULL) {
 
 function stateList($activeState = NULL, $activeCountry = NULL) {
 	$states['United States'] = array(
-			"-" => "Select State/Province",
+			"" => "Select State/Province",
 			'Alabama' => 'Alabama',
 			'Alaska' => 'Alaska',
 			'Arizona' => 'Arizona',
@@ -78,7 +69,7 @@ function stateList($activeState = NULL, $activeCountry = NULL) {
 	);
 
 	$states['Turkey'] = array(
-			"-" => "Select State/Province",
+			"" => "Select State/Province",
 			'Adana' => 'Adana',
 			'Adıyaman' => 'Adıyaman',
 			'Afyonkarahisar' => 'Afyonkarahisar',
@@ -161,6 +152,12 @@ function stateList($activeState = NULL, $activeCountry = NULL) {
 			'Yozgat' => 'Yozgat',
 			'Zonguldak' => 'Zonguldak'
 	);
+
+
+    $states['Canada'] = array(
+        "" => "Select State/Province",
+        'Vancouver' => 'Vancouver',
+    );
 
 	if (($activeState != NULL) and ($activeCountry != NULL)) {
 		return $states[$activeCountry][$activeState];

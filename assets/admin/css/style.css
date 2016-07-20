@@ -1819,3 +1819,7 @@ a.btn{
 .image_input{
     width: 80%;
 }
+.control-group.required .control-label:before {
+    content:"*";
+    color:red;
+}

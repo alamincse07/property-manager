@@ -56,8 +56,10 @@
                 		<td width="33%" colspan="2">City/Town</td>
                 	</tr>
                 	<tr>
-                		<td><?php echo form_dropdown('country', $country, '', 'class="country span" id="country" onchange="set_country_marker();"'); ?></td>
-                		<td><?php echo form_dropdown('province', $province, 'AL', 'class="province span" id="province" onchange="set_state_marker();"'); ?></td>
+                		<td><?php
+                            //required="required"
+                            echo form_dropdown('country', $country, '', ' class="country span" id="country" onchange="set_country_marker();"'); ?></td>
+                		<td><?php echo form_dropdown('province', $province, '', ' class="province span" id="province" onchange="set_state_marker();"'); ?></td>
                 		<td colspan="2"><?php $city['class'] = 'span'; echo form_input($city); ?></td>
                 	</tr>
                 	<tr>

@@ -20,6 +20,25 @@ echo $sidebar ?>
     <script type="text/javascript" src="<?php echo base_url() ?>assets/admin/js/tiny_mce/jquery.tinymce.js"></script>
     <script type="text/javascript" src="<?php echo base_url() ?>assets/admin/js/jquery-ui.multidatespicker.js"></script>
     <script type="text/javascript">
+
+        function initializeDatePicker(start_date_id,end_date_id){
+
+            $('#'+start_date_id).datepicker({
+                minDate: 0,
+                defaultDate: "+1w",
+                dateFormat: "yy-mm-dd"
+
+            });
+            $('#'+end_date_id).datepicker({
+                minDate: 0,
+                defaultDate: "+1w",
+                dateFormat: "yy-mm-dd"
+
+            });
+
+        }
+
+
         $().ready(function () {
 
 
@@ -35,18 +54,18 @@ echo $sidebar ?>
                 dateFormat: "yy-mm-dd"
 
             });
-            $('#start_date0').datepicker({
-                minDate: 0,
-                defaultDate: "+1w",
-                dateFormat: "yy-mm-dd"
 
-            });
-            $('#end_date0').datepicker({
-                minDate: 0,
-                defaultDate: "+1w",
-                dateFormat: "yy-mm-dd"
 
-            });
+
+            if($('#added_rates').length){
+
+                var total =$('#added_rates').val();
+
+                for( var k=0;k<=total;k++){
+
+                    initializeDatePicker('start_date'+k,'end_date'+k);
+                }
+            }
 
             $('#custom-date-format').multiDatesPicker({
                 minDate: 0,
@@ -199,7 +218,9 @@ echo $sidebar ?>
         <div class="more-rat1e-control-group">
 
             <h3>Images</h3>
+
             <hr/>
+            (The first photo will be taken as the default listing image)
             <div>
                 <input class="btn btn-medium btn-primary" type="button" id="image_add" value="Add Image Urls"/>
                 <input class="btn btn-medium btn-primary" type="hidden" id="confirm_image_delete" value="1"/>
@@ -208,7 +229,7 @@ echo $sidebar ?>
             <table width="100%" cellpadding="0" cellspacing="0" border="0" class="price-rat1e image-urls-table">
 
             <?php
-            if(isset($photos[0])){
+            if(isset($photos[0]) && $photos[0]!=''){
                 foreach($photos as $k=>$image){
                     echo'
                     <tr class="single_image_row">
@@ -305,8 +326,11 @@ echo $sidebar ?>
                     </tr>
                     <?php
                     if(isset($optional_rates[0])){
+                        echo '<input type="hidden" id="added_rates" value="'.count($optional_rates).'">';
                         foreach($optional_rates as $k=>$val){
-                            echo'<tr class="single_rate_row"> <td> <a onclick="remove_me(this);" title="Delete this row" href="javascript:void(0);">X</a> </td> <td> <input type="text" class="start_date_pic" onkeypress="" id="start_date'.$k.'" value="'.$val->start_date.'" name="start_date[]"> </td> <td> <input type="text" class="end_date_pic" onkeypress="" id="end_date'.$k.'" value="'.$val->end_date.'" name="end_date[]"> </td> <td> <input type="text" class="span" onkeypress="" value="'.$val->title.'" name="rate_title[]"> </td> <td> <input type="text" onkeypress="return isNumber(event)"  value="'.$val->min_los.'"  name="min_los[]"> </td> <td> <input type="text"  value="'.$val->nightly_price.'" name="nightly[]"> </td> <td> <input type="text"  value="'.$val->weekly_price.'" name="weekly[]"> </td> </tr>';
+                            echo '<tr class="single_rate_row"> <td> <a onclick="remove_me(this);" title="Delete this row" href="javascript:void(0);">X</a> </td> <td> <input type="text" class="start_date_pic" onkeypress="" id="start_date' . $k . '" value="' . $val->start_date . '" name="start_date[]"> </td> <td> <input type="text" class="end_date_pic" onkeypress="" id="end_date' . $k . '" value="' . $val->end_date . '" name="end_date[]"> </td> <td> <input type="text" class="span" onkeypress="" value="' . $val->title . '" name="rate_title[]"> </td> <td> <input type="text" onkeypress="return isNumber(event)"  value="' . $val->min_los . '"  name="min_los[]"> </td> <td> <input type="text"  value="' . $val->nightly_price . '" name="nightly[]"> </td> <td> <input type="text"  value="' . $val->weekly_price . '" name="weekly[]"> </td> </tr>';
+
+
                         }
                     }else{
                     ?>
@@ -410,7 +434,8 @@ echo $sidebar ?>
             } ?>
         </div>
 
-        <a href="/index.php/admin/estateEdit/<?php echo $id_estate; ?>"><input type="button" class="btn btn-primary"
+        <a href="/index.php/admin/estateEdit/<?php echo $id_estate; ?>">
+            <input type="button" class="btn btn-primary"
                                                                                value="Back"/></a>&nbsp;&nbsp;
         <input type="submit" name="save" value="Update Property" class="btn btn-primary"/>&nbsp;&nbsp;
         <input type="reset" name="reset" value="Cancel" class="btn btn-primary"/>
@@ -463,7 +488,7 @@ echo $sidebar ?>
                 </div>
             </div>
 
-            <div class="control-group">
+            <div class="control-group hidden">
 
                 <div id="custom-date-format">
                     <h4>Select not available dates</h4>
@@ -493,63 +518,70 @@ echo $sidebar ?>
 
 
             <div>
-                <div class="control-group">
-                    <label class="control-label"><?php echo lang('estate_add_room', 'room'); ?></label>
+                <div class="control-group required">
+                    <label class="control-label">Number of Rooms</label>
 
                     <div class="controls">
-                        <?php echo form_dropdown('room', $room, $roomAC, 'class="span"'); ?>
+                        <!-- --><?php /*echo form_dropdown('room', $room, '', 'class="span"'); */?>
+                        <?php echo form_input( $room); ?>
                     </div>
                 </div>
-                <div class="control-group">
-                    <label class="control-label">Number of Sleep</label>
+                <div class="control-group required">
+                    <label class="control-label">Sleeps #</label>
 
                     <div class="controls">
                         <?php $sleep['class'] = 'span';
                         echo form_input($sleep); ?>
                     </div>
                 </div>
-                <div class="control-group">
-                    <label class="control-label"><?php echo lang('estate_add_bathroom', 'bathroom'); ?></label>
+                <div class="control-group required">
+                    <label class="control-label">Number of Bedrooms</label>
 
                     <div class="controls">
-                        <?php echo form_dropdown('bathroom', $bathroom, $bathroomAC, 'class="span"'); ?>
+                        <?php /*echo form_dropdown('bathroom', $bathroom, '', 'class="span"'); */?>
+                        <?php echo form_input( $bathroom); ?>
                     </div>
                 </div>
-                <div class="control-group">
+                <div class="control-group hidden">
                     <label class="control-label"><?php echo lang('estate_add_heating', 'heating'); ?></label>
 
                     <div class="controls">
-                        <?php echo form_dropdown('heating', $heating, $heatingAC, 'class="span"'); ?>
+                        <?php echo form_dropdown('heating', $heating, '', 'class="span"'); ?>
                     </div>
                 </div>
                 <div class="control-group">
                     <label class="control-label"><?php echo lang('estate_add_squaremeter', 'squaremeter'); ?></label>
 
                     <div class="controls">
-                        <?php echo form_dropdown('squaremeter', $squaremeter, $squaremeterAC, 'class="span"'); ?>
+                        <?php /*echo form_dropdown('squaremeter', $squaremeter, '', 'class="span"'); */?>
+                        <?php echo form_input( $squaremeter); ?>
                     </div>
                 </div>
+
                 <div class="control-group">
-                    <label class="control-label">Square Foot</label>
+                    <label class="control-label">Sqaure Foot</label>
 
                     <div class="controls">
-                        <?php echo form_dropdown('squarefoot', $squaremeter, $squarefootAC, 'class="span"'); ?>
+                        <?php /*echo form_dropdown('squarefoot', $squaremeter, '', 'class="span"'); */?>
+                        <?php echo form_input( $squarefoot); ?>
                     </div>
                 </div>
                 <!--<div class="control-group">
-                    <label class="control-label"><?php /*echo lang('estate_add_buildstatus', 'buildstatus'); */?></label>
+        <label class="control-label"><?php /*echo lang('estate_add_buildstatus', 'buildstatus'); */?></label>
 
-                    <div class="controls">
-                        <?php /*echo form_dropdown('buildstatus', $buildstatus, $buildstatusAC, 'class="span"'); */?>
-                    </div>
-                </div>-->
+        <div class="controls">
+            <?php /*echo form_dropdown('buildstatus', $buildstatus, '', 'class="span"'); */?>
+        </div>
+    </div>-->
                 <div class="control-group">
                     <label class="control-label"><?php echo lang('estate_add_floor', 'floor'); ?></label>
 
                     <div class="controls">
-                        <?php echo form_dropdown('floor', $floor, $floorAC, 'class="span"'); ?>
+                        <!-- --><?php /*echo form_dropdown('floor', $floor, '', 'class="span"'); */?>
+                        <?php echo form_input( $floor); ?>
                     </div>
                 </div>
+                <hr/>
 
                 <hr/>
 
@@ -566,33 +598,7 @@ echo $sidebar ?>
                                 echo lang('estate_add_showcase') */?></label>-->
                         </div>
                     </div>
-                    <div class="control-group">
-                        <h3 class="control-label">Feed listing to</h3>
-
-                        <div class="controls emlakoptions">
-                            <label><?php echo form_checkbox('fk', 1, $fk);
-                                echo 'Flip Key' ?></label>
-                            <!--<label><?php /*echo form_checkbox('vrbo', 1, $vrbo);
-                                echo 'VRBO'*/?></label>
-                            <label><?php /*echo form_checkbox('hw', 1, $hw);
-                                echo 'Home Away'*/?></label>
-                            <label><?php /*echo form_checkbox('vast', 1, $vast);
-                                echo 'Vast' */?></label>
-                            <label><?php /*echo form_checkbox('otalo', 1, $otalo);
-                                echo 'Otalo'*/?></label>
-                            <label><?php /*echo form_checkbox('airbnb', 1, $airbnb);
-                                echo 'Airbnb'*/?></label>
-
-                            <label><?php /*echo form_checkbox('ht', 1, $ht);
-                                echo 'Housetrip' */?></label>
-                            <label><?php /*echo form_checkbox('bk', 1, $bk);
-                                echo 'Booking.com'*/?></label>
-                            <label><?php /*echo form_checkbox('rm', 1, $rm);
-                                echo 'Roomorama'*/?></label>
-
--->
-                        </div>
-                    </div>
+                    <div class="control-group"></div>
 
                 </div>
 

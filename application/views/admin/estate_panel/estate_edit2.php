@@ -63,7 +63,7 @@ echo $sidebar ?>
 
                 for( var k=0;k<=total;k++){
 
-                    initializeDatePicker('start_date'+k,'end_date'+k);
+                    initializeDatePicker('start_date_'+k,'end_date_'+k);
                 }
             }
 
@@ -111,8 +111,8 @@ echo $sidebar ?>
 
     <div class="row-fluid">
     <div class="span8">
-        <div class="control-group">
-            <label class="control-label"><?php echo lang('estate_add_title', 'title'); ?></label>
+        <div class="control-group required">
+            <label class="control-label">Title/Property name</label>
 
             <div class="controls">
                 <?php $title['class'] = 'span';
@@ -328,7 +328,7 @@ echo $sidebar ?>
                     if(isset($optional_rates[0])){
                         echo '<input type="hidden" id="added_rates" value="'.count($optional_rates).'">';
                         foreach($optional_rates as $k=>$val){
-                            echo '<tr class="single_rate_row"> <td> <a onclick="remove_me(this);" title="Delete this row" href="javascript:void(0);">X</a> </td> <td> <input type="text" class="start_date_pic" onkeypress="" id="start_date' . $k . '" value="' . $val->start_date . '" name="start_date[]"> </td> <td> <input type="text" class="end_date_pic" onkeypress="" id="end_date' . $k . '" value="' . $val->end_date . '" name="end_date[]"> </td> <td> <input type="text" class="span" onkeypress="" value="' . $val->title . '" name="rate_title[]"> </td> <td> <input type="text" onkeypress="return isNumber(event)"  value="' . $val->min_los . '"  name="min_los[]"> </td> <td> <input type="text"  value="' . $val->nightly_price . '" name="nightly[]"> </td> <td> <input type="text"  value="' . $val->weekly_price . '" name="weekly[]"> </td> </tr>';
+                            echo '<tr class="single_rate_row"> <td> <a onclick="remove_me(this);" title="Delete this row" href="javascript:void(0);">X</a> </td> <td> <input type="text" class="start_date_pic" onkeypress="" id="start_date_' . $k . '" value="' . $val->start_date . '" name="start_date[]"> </td> <td> <input type="text" class="end_date_pic" onkeypress="" id="end_date_' . $k . '" value="' . $val->end_date . '" name="end_date[]"> </td> <td> <input type="text" class="span" onkeypress="" value="' . $val->title . '" name="rate_title[]"> </td> <td> <input type="text" onkeypress="return isNumber(event)"  value="' . $val->min_los . '"  name="min_los[]"> </td> <td> <input type="text"  value="' . $val->nightly_price . '" name="nightly[]"> </td> <td> <input type="text"  value="' . $val->weekly_price . '" name="weekly[]"> </td> </tr>';
 
 
                         }
@@ -446,7 +446,7 @@ echo $sidebar ?>
 
         <div>
 
-            <div class="control-group">
+            <div class="control-group required">
                 <label class="control-label">Telephone</label>
 
                 <div class="controls">
@@ -454,7 +454,7 @@ echo $sidebar ?>
                     echo form_input($telephone); ?>
                 </div>
             </div>
-            <div class="control-group">
+            <div class="control-group required">
                 <label class="control-label">Booking/Owner site url for this property</label>
 
                 <div class="controls">
@@ -462,8 +462,8 @@ echo $sidebar ?>
                     echo form_input($gsm); ?>
                 </div>
             </div>
-            <div class="control-group">
-                <label class="control-label">Email</label>
+            <div class="control-group required">
+                <label class="control-label">Property Contact Email</label>
 
                 <div class="controls">
                     <?php $email['class'] = 'span';
@@ -594,8 +594,7 @@ echo $sidebar ?>
                                 echo lang('estate_add_publish') ?></label>
                             <label><?php echo form_radio($publish, '0', $publishAC2);
                                 echo lang('estate_add_draft') ?></label>
-                           <!-- <label><?php /*echo form_checkbox($showcase, 1, $showcaseAC);
-                                echo lang('estate_add_showcase') */?></label>-->
+                            <label><a href="#"> Preview </a> </label>
                         </div>
                     </div>
                     <div class="control-group"></div>

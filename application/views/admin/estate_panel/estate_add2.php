@@ -74,7 +74,7 @@ if ($success) {
 <div class="span8">
 
     <div class="control-group required">
-        <label class="control-label"><?php echo lang('estate_add_title', 'title'); ?></label>
+        <label class="control-label">Title/Property name</label>
 
         <div class="controls">
             <?php $title['class'] = 'span';
@@ -365,7 +365,7 @@ if ($success) {
         } ?>
     </div>
 
-    <a href="estateAdd"><input type="button" class="btn btn-primary" value="Back"/></a>&nbsp;&nbsp;
+    <!--<a href="estateAdd"><input type="button" class="btn btn-primary" value="Back"/></a>&nbsp;&nbsp;-->
     <input type="submit" name="save" value="Create Property" class="btn btn-primary"/>&nbsp;&nbsp;
     <input type="reset" name="reset" value="Cancel" class="btn btn-primary"/>
 </div>
@@ -373,7 +373,7 @@ if ($success) {
 
 <div class="span4">
 
-    <div class="control-group">
+    <div class="control-group required">
         <label class="control-label">Telephone</label>
 
         <div class="controls">
@@ -381,7 +381,7 @@ if ($success) {
             echo form_input($telephone); ?>
         </div>
     </div>
-    <div class="control-group">
+    <div class="control-group required">
         <label class="control-label">Booking/Owner site url for this property</label>
 
         <div class="controls">
@@ -389,7 +389,7 @@ if ($success) {
             echo form_input($gsm); ?>
         </div>
     </div>
-    <div class="control-group required">
+    <div class="control-group required required">
         <label class="control-label">Property Contact Email</label>
 
         <div class="controls">
@@ -477,6 +477,7 @@ if ($success) {
             <?php echo form_input( $bathroom); ?>
         </div>
     </div>
+
     <div class="control-group hidden">
         <label class="control-label"><?php echo lang('estate_add_heating', 'heating'); ?></label>
 
@@ -527,8 +528,7 @@ if ($success) {
                     echo lang('estate_add_publish') ?></label>
                 <label><?php echo form_radio($publish, '0');
                     echo lang('estate_add_draft') ?></label>
-                <!--<label><?php /*echo form_checkbox($showcase, 1, FALSE);
-                    echo lang('estate_add_showcase') */?></label>-->
+                <label><a href="#"> Preview </a> </label>
             </div>
         </div>
         <div class="control-group"></div>

@@ -171,6 +171,7 @@ class admin extends CI_Controller
         $this->data['lat'] = array(
             'name' => 'lat',
             'id' => 'lat',
+            'required' => 'required',
             'type' => 'text',
             'class' => 'span',
             'value' => $this->form_validation->set_value('lat'),
@@ -179,6 +180,7 @@ class admin extends CI_Controller
         $this->data['lon'] = array(
             'name' => 'lon',
             'id' => 'lon',
+            'required' => 'required',
             'type' => 'text',
             'class' => 'span',
             'value' => $this->form_validation->set_value('lon'),
@@ -189,6 +191,7 @@ class admin extends CI_Controller
         $this->data['city'] = array(
             'name' => 'city',
             'id' => 'city',
+            'required' => 'required',
             'type' => 'text',
             'value' => $this->form_validation->set_value('city'),
         );
@@ -273,6 +276,7 @@ class admin extends CI_Controller
                 'gsm' => $this->input->post('gsm'),
                 'email' => $this->input->post('email'),
                 'guest_count' => $this->input->post('guest_count'),
+                'sleep' => $this->input->post('sleep'),
                 'room' => $this->input->post('room'),
                 'bathroom' => $this->input->post('bathroom'),
                 'heating' => $this->input->post('heating'),
@@ -300,25 +304,25 @@ class admin extends CI_Controller
             if ($data['content'] == "")
                 $data['content'] = '';
             if ($data['telephone'] == "")
-                $data['telephone'] = 0;
+                $data['telephone'] = '';
             if ($data['gsm'] == "")
                 $data['gsm'] = '';
             if ($data['email'] == "")
                 $data['email'] = '';
             if ($data['room'] == "")
-                $data['room'] = 0;
+                $data['room'] = '';
             if ($data['bathroom'] == "")
-                $data['bathroom'] = 0;
+                $data['bathroom'] = '';
             if ($data['heating'] == "")
-                $data['heating'] = 0;
+                $data['heating'] ='';
             if ($data['squaremeter'] == "")
-                $data['squaremeter'] = 0;
+                $data['squaremeter'] = '';
             if ($data['squarefoot'] == "")
-                $data['squarefoot'] = 0;
+                $data['squarefoot'] = '';
             if ($data['buildstatus'] == "")
-                $data['buildstatus'] = 0;
+                $data['buildstatus'] = '';
             if ($data['floor'] == "")
-                $data['floor'] = 0;
+                $data['floor'] = '';
             if ($data['photo'] == false)
                 $data['photo'] = array(NULL);
         }
@@ -356,6 +360,7 @@ class admin extends CI_Controller
                 'name' => 'title',
                 'id' => 'title',
                 'type' => 'text',
+                'required'=>'required',
                 'value' => $this->form_validation->set_value('title')
             );
 
@@ -401,6 +406,7 @@ class admin extends CI_Controller
                 'name' => 'rate_title',
                 'id' => 'rate_title',
                 'type' => 'text',
+
                 'onkeypress' => 'return isNumber(event)',
                 'value' => $this->form_validation->set_value('rate_title'),
             );
@@ -464,6 +470,7 @@ class admin extends CI_Controller
             $this->data['gsm'] = array(
                 'name' => 'gsm',
                 'id' => 'gsm',
+                'required'=>'required',
                 'type' => 'text',
                 'value' => $this->form_validation->set_value('gsm'),
             );
@@ -471,6 +478,12 @@ class admin extends CI_Controller
                 'name' => 'email',
                 'id' => 'email',
                 'type' => 'email',
+
+              //
+                'required'=>'required',
+                //'onkeypress' => 'return isNumber(event)',
+
+
                 'value' => $this->form_validation->set_value('email'),
             );
            /* $this->data['guest_count'] = array(
@@ -483,20 +496,62 @@ class admin extends CI_Controller
             $this->data['publish'] = array('name' => 'publish');
             $this->data['showcase'] = array('name' => 'showcase');
             $this->session->set_userdata('page', 1);
-            $this->data['room'] = $this->admin_estate_model->selectboxType('room');
+            //$this->data['room'] = $this->admin_estate_model->selectboxType('room');
+            $this->data['bathroom'] = array(
+                'name' => 'bathroom',
+                'id' => 'bathroom',
+                'type' => 'text',
+                'required'=>'required',
+                'onkeypress' => 'return isNumber(event)',
+                'value' => $this->form_validation->set_value('bathroom'),
+            );
+            $this->data['room'] = array(
+                'name' => 'room',
+                'id' => 'room',
+                'type' => 'text',
+                'required'=>'required',
+                'onkeypress' => 'return isNumber(event)',
+                'value' => $this->form_validation->set_value('room'),
+            );
+
             $this->data['sleep'] = array(
                 'name' => 'sleep',
                 'id' => 'sleep',
                 'type' => 'text',
+                'required'=>'required',
                 'onkeypress' => 'return isNumber(event)',
                 'value' => $this->form_validation->set_value('sleep'),
             );
-            $this->data['bathroom'] = $this->admin_estate_model->selectboxType('bathroom');
+            $this->data['squarefoot'] = array(
+                'name' => 'squarefoot',
+                'id' => 'sleep',
+                'type' => 'text',
+                //'required'=>'required',
+                'onkeypress' => 'return isNumber(event)',
+                'value' => $this->form_validation->set_value('squarefoot'),
+            );
+            $this->data['squaremeter'] = array(
+                'name' => 'squaremeter',
+                'id' => 'squaremeter',
+                'type' => 'text',
+               // 'required'=>'required',
+                'onkeypress' => 'return isNumber(event)',
+                'value' => $this->form_validation->set_value('squaremeter'),
+            );
+            $this->data['floor'] = array(
+                'name' => 'floor',
+                'id' => 'floor',
+                'type' => 'text',
+                //'required'=>'required',
+                'onkeypress' => 'return isNumber(event)',
+                'value' => $this->form_validation->set_value('floor'),
+            );
+           // $this->data['bathroom'] = $this->admin_estate_model->selectboxType('bathroom');
             $this->data['heating'] = $this->admin_estate_model->selectboxType('heating');
-            $this->data['squaremeter'] = $this->admin_estate_model->selectboxType('squaremeter');
-            $this->data['squarefoot'] = $this->admin_estate_model->selectboxType('squarefoot');
+           // $this->data['squaremeter'] = $this->admin_estate_model->selectboxType('squaremeter');
+          //  $this->data['squarefoot'] = $this->admin_estate_model->selectboxType('squarefoot');
             $this->data['buildstatus'] = $this->admin_estate_model->selectboxType('buildstatus');
-            $this->data['floor'] = $this->admin_estate_model->selectboxType('floor');
+          //  $this->data['floor'] = $this->admin_estate_model->selectboxType('floor');
 
             $this->tmadmin->tmView('estate_panel/estate_add2', $this->data);
         }
@@ -526,6 +581,7 @@ class admin extends CI_Controller
         $this->data['city'] = array(
             'name' => 'city',
             'id' => 'city',
+            'required' => 'required',
             'type' => 'text',
             'value' => $reData[0]->city,
         );
@@ -549,6 +605,7 @@ class admin extends CI_Controller
         $this->data['lat'] = array(
             'name' => 'lat',
             'id' => 'lat',
+            'required' => 'required',
             'type' => 'text',
             'class' => 'span',
             'value' => trim($lat),
@@ -557,6 +614,7 @@ class admin extends CI_Controller
         $this->data['lon'] = array(
             'name' => 'lon',
             'id' => 'lon',
+            'required' => 'required',
             'type' => 'text',
             'class' => 'span',
             'value' => trim($lon),
@@ -564,6 +622,7 @@ class admin extends CI_Controller
 
         $this->data['telephone'] = array(
             'name' => 'telephone',
+            'required'=>'required',
             'id' => 'telephone',
             'type' => 'text',
             'value' => $reData[0]->telephone,
@@ -707,19 +766,19 @@ class admin extends CI_Controller
             if ($data['email'] == "")
                 $data['email'] = '';
             if ($data['room'] == "")
-                $data['room'] = 0;
+                $data['room'] = '';
             if ($data['bathroom'] == "")
-                $data['bathroom'] = 0;
+                $data['bathroom'] = '';
             if ($data['heating'] == "")
                 $data['heating'] = '';
             if ($data['squaremeter'] == "")
-                $data['squaremeter'] = 0;
+                $data['squaremeter'] = '';
             if ($data['squarefoot'] == "")
-                $data['squarefoot'] = 0;
+                $data['squarefoot'] = '';
             if ($data['buildstatus'] == "")
                 $data['buildstatus'] = '';
             if ($data['floor'] == "")
-                $data['floor'] = 0;
+                $data['floor'] = '';
             if ($data['photo'] == false)
                 $data['photo'] = array(NULL);
         }
@@ -766,7 +825,8 @@ class admin extends CI_Controller
                 'name' => 'title',
                 'id' => 'title',
                 'type' => 'text',
-                'value' => $reData[0]->title,
+                'required'=>'required',
+                'value' => $reData[0]->title
             );
 
             $this->data['content'] = array(
@@ -829,6 +889,7 @@ class admin extends CI_Controller
             $this->data['telephone'] = array(
                 'name' => 'telephone',
                 'id' => 'telephone',
+                'required'=>'required',
                 'type' => 'text',
                 'value' => $reData[0]->telephone,
             );
@@ -836,8 +897,9 @@ class admin extends CI_Controller
                 'name' => 'sleep',
                 'id' => 'sleep',
                 'type' => 'text',
+                'required'=>'required',
                 'onkeypress' => 'return isNumber(event)',
-                'value' => $reData[0]->sleep,
+                'value' => $reData[0]->sleep
             );
             $this->data['gsm'] = array(
                 'name' => 'gsm',
@@ -849,8 +911,13 @@ class admin extends CI_Controller
                 'name' => 'email',
                 'id' => 'email',
                 'type' => 'email',
-                'value' => $reData[0]->email,
+
+                //
+                'required'=>'required',
+                //'onkeypress' => 'return isNumber(event)',
+                'value' => $reData[0]->email
             );
+
 
             $this->data['publish'] = array('name' => 'publish');
             $this->data['publishAC'] = ($reData[0]->publish) ? TRUE : FALSE;
@@ -858,21 +925,58 @@ class admin extends CI_Controller
             $this->data['showcase'] = array('name' => 'showcase');
             $this->data['showcaseAC'] = ($reData[0]->showcase) ? TRUE : FALSE;
 
-            $this->data['room'] = $this->admin_estate_model->selectboxType('room');
-            $this->data['roomAC'] = $reData[0]->room;
-            $this->data['bathroom'] = $this->admin_estate_model->selectboxType('bathroom');
-            $this->data['bathroomAC'] = $reData[0]->bathroom;
+
+
+            $this->data['room'] = array(
+                'name' => 'room',
+                'id' => 'room',
+                'type' => 'text',
+                'required'=>'required',
+                'onkeypress' => 'return isNumber(event)',
+                'value' => $reData[0]->room
+            );
+
+
+            $this->data['bathroom'] = array(
+                'name' => 'bathroom',
+                'id' => 'bathroom',
+                'type' => 'text',
+                'required'=>'required',
+                'onkeypress' => 'return isNumber(event)',
+                'value' => $reData[0]->bathroom
+            );
+
+
+            $this->data['squarefoot'] = array(
+                'name' => 'squarefoot',
+                'id' => 'sleep',
+                'type' => 'text',
+                //'required'=>'required',
+                'onkeypress' => 'return isNumber(event)',
+                'value' => $reData[0]->squarefoot
+            );
+            $this->data['squaremeter'] = array(
+                'name' => 'squaremeter',
+                'id' => 'squaremeter',
+                'type' => 'text',
+                // 'required'=>'required',
+                'onkeypress' => 'return isNumber(event)',
+                'value' =>  $reData[0]->squaremeter
+            );
+            $this->data['floor'] = array(
+                'name' => 'floor',
+                'id' => 'floor',
+                'type' => 'text',
+                //'required'=>'required',
+                'onkeypress' => 'return isNumber(event)',
+                'value' =>  $reData[0]->floor
+            );
+
             $this->data['heating'] = $this->admin_estate_model->selectboxType('heating');
             $this->data['heatingAC'] = $reData[0]->heating;
-            $this->data['squaremeter'] = $this->admin_estate_model->selectboxType('squaremeter');
-            $this->data['squaremeterAC'] = $reData[0]->squaremeter;
-            $this->data['squarefoot'] = $this->admin_estate_model->selectboxType('squaremeter');
-            $this->data['squarefootAC'] = $reData[0]->squarefoot;
             $this->data['buildstatus'] = $this->admin_estate_model->selectboxType('buildstatus');
             $this->data['buildstatusAC'] = $reData[0]->buildstatus;
-            $this->data['floor'] = $this->admin_estate_model->selectboxType('floor');
-            $this->data['floorAC'] = $reData[0]->floor;
-          #  \application\helpers\Generic::_setTrace($this->data);
+                      #  \application\helpers\Generic::_setTrace($this->data);
             $this->tmadmin->tmView('estate_panel/estate_edit2', $this->data);
         }
     }

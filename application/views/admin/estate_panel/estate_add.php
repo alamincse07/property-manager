@@ -100,7 +100,7 @@
 
               <p align="left">
                 <input type="submit" name="submit" value="Next" class="btn btn-primary" />&nbsp;&nbsp;
-                <input type="submit" name="skip" value="Skip" class="btn btn-primary" />&nbsp;&nbsp;
+                <!--<input type="submit" name="skip" value="Skip" class="btn btn-primary" />&nbsp;&nbsp;-->
                 <input type="reset" name="reset" value="Cancel" class="btn btn-primary" />
                </p> 
             </div>

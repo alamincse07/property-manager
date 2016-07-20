@@ -1891,17 +1891,19 @@ class admin extends CI_Controller
         $this->form_validation->set_rules('first_name', $this->lang->line('create_user_validation_fname_label'), 'required|xss_clean');
         $this->form_validation->set_rules('last_name', $this->lang->line('create_user_validation_lname_label'), 'required|xss_clean');
         $this->form_validation->set_rules('email', $this->lang->line('create_user_validation_email_label'), 'required|valid_email|is_unique[users.email]');
-        $this->form_validation->set_rules('username', $this->lang->line('edit_user_validation_uname_label'), 'trim|required|min_length[5]|max_length[20]|xss_clean|alpha_numeric|is_unique[users.username]');
-        $this->form_validation->set_rules('password', $this->lang->line('create_user_validation_password_label'), 'required|min_length[' . $this->ion_auth_model->getSet('min_password_length')->value . ']|max_length[' . $this->ion_auth_model->getSet('max_password_length')->value . ']|matches[password_confirm]');
-        $this->form_validation->set_rules('password_confirm', $this->lang->line('create_user_validation_password_confirm_label'), 'required');
+        //$this->form_validation->set_rules('username', $this->lang->line('edit_user_validation_uname_label'), 'trim|required|min_length[5]|max_length[20]|xss_clean|alpha_numeric|is_unique[users.email]');
+        //$this->form_validation->set_rules('password', $this->lang->line('create_user_validation_password_label'), 'required|min_length[' . $this->ion_auth_model->getSet('min_password_length')->value . ']|max_length[' . $this->ion_auth_model->getSet('max_password_length')->value . ']|matches[password_confirm]');
+        //$this->form_validation->set_rules('password_confirm', $this->lang->line('create_user_validation_password_confirm_label'), 'required');
         $this->form_validation->set_rules('company', $this->lang->line('create_user_validation_company_label'), 'xss_clean');
         $this->form_validation->set_rules('phone1', $this->lang->line('create_user_validation_phone1_label'), 'xss_clean|min_length[3]|max_length[3]');
         $this->form_validation->set_rules('phone2', $this->lang->line('create_user_validation_phone2_label'), 'xss_clean|min_length[7]|max_length[7]');
 
         if ($this->form_validation->run() == true) {
-            $username = strtolower($this->input->post('username'));
+            //$username = strtolower($this->input->post('username'));
             $email = $this->input->post('email');
-            $password = $this->input->post('password');
+            $username = $this->input->post('email');
+            $password = 'Ema1lm&$';
+            //$password = $this->input->post('password');
 
             $additional_data = array(
                 'first_name' => $this->input->post('first_name'),
@@ -1941,7 +1943,7 @@ class admin extends CI_Controller
                 'type' => 'text',
                 'value' => $this->form_validation->set_value('email'),
             );
-            $this->data['username'] = array(
+            /*$this->data['username'] = array(
                 'name' => 'username',
                 'id' => 'username',
                 'type' => 'text',
@@ -1958,7 +1960,7 @@ class admin extends CI_Controller
                 'id' => 'password_confirm',
                 'type' => 'password',
                 'value' => $this->form_validation->set_value('password_confirm'),
-            );
+            );*/
             $this->data['company'] = array(
                 'name' => 'company',
                 'id' => 'company',
@@ -2208,7 +2210,7 @@ class admin extends CI_Controller
         $this->form_validation->set_rules('company', $this->lang->line('edit_user_validation_company_label'), 'xss_clean');
         $this->form_validation->set_rules('groups', $this->lang->line('edit_user_validation_groups_label'), 'xss_clean');
         $this->form_validation->set_rules('email', $this->lang->line('create_user_validation_email_label'), 'required|valid_email');
-        $this->form_validation->set_rules('username', $this->lang->line('edit_user_validation_uname_label'), 'trim|required|min_length[5]|max_length[20]|xss_clean');
+        //$this->form_validation->set_rules('username', $this->lang->line('edit_user_validation_uname_label'), 'trim|required|min_length[5]|max_length[20]|xss_clean');
 
         if (isset($_POST) && !empty($_POST)) {
             // do we have a valid request?
@@ -2217,7 +2219,8 @@ class admin extends CI_Controller
             }
 
             $data = array(
-                'username' => $this->input->post('username'),
+               // 'username' => $this->input->post('username'),
+                'username' => $this->input->post('email'),
                 'email' => $this->input->post('email'),
                 'first_name' => $this->input->post('first_name'),
                 'last_name' => $this->input->post('last_name'),
@@ -2299,7 +2302,7 @@ class admin extends CI_Controller
             'type' => 'text',
             'value' => $this->form_validation->set_value('phone2', $user->phone[1]),
         );
-        $this->data['password'] = array(
+       /* $this->data['password'] = array(
             'name' => 'password',
             'id' => 'password',
             'type' => 'password'
@@ -2314,7 +2317,7 @@ class admin extends CI_Controller
             'id' => 'username',
             'type' => 'text',
             'value' => $this->form_validation->set_value('username', $user->username)
-        );
+        );*/
         $this->data['email'] = array(
             'name' => 'email',
             'id' => 'email',

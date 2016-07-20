@@ -136,18 +136,21 @@ class Auth extends CI_Controller {
         //validate form input
         $this->form_validation->set_rules('first_name', $this->lang->line('create_user_validation_fname_label'), 'required|xss_clean');
         $this->form_validation->set_rules('last_name', $this->lang->line('create_user_validation_lname_label'), 'required|xss_clean');
-        $this->form_validation->set_rules('username', $this->lang->line('create_user_validation_username_label'), 'trim|required|min_length[3]|max_length[20]|xss_clean|is_unique[users.username]');
+        //$this->form_validation->set_rules('username', $this->lang->line('create_user_validation_username_label'), 'trim|required|min_length[3]|max_length[20]|xss_clean|is_unique[users.username]');
         $this->form_validation->set_rules('email', $this->lang->line('create_user_validation_email_label'), 'required|valid_email|is_unique[users.email]');
-        $this->form_validation->set_rules('password', $this->lang->line('create_user_validation_password_label'), 'required|min_length[' . $this->ion_auth_model->getSet('min_password_length')->value . ']|max_length[' . $this->ion_auth_model->getSet('max_password_length')->value . ']|matches[password_confirm]');
-        $this->form_validation->set_rules('password_confirm', $this->lang->line('create_user_validation_password_confirm_label'), 'required');
+        //$this->form_validation->set_rules('password', $this->lang->line('create_user_validation_password_label'), 'required|min_length[' . $this->ion_auth_model->getSet('min_password_length')->value . ']|max_length[' . $this->ion_auth_model->getSet('max_password_length')->value . ']|matches[password_confirm]');
+        //$this->form_validation->set_rules('password_confirm', $this->lang->line('create_user_validation_password_confirm_label'), 'required');
         $this->form_validation->set_rules('company', $this->lang->line('create_user_validation_company_label'), 'xss_clean');
         $this->form_validation->set_rules('phone1', $this->lang->line('create_user_validation_phone1_label'), 'xss_clean|min_length[1]|max_length[4]');
         $this->form_validation->set_rules('phone2', $this->lang->line('create_user_validation_phone2_label'), 'xss_clean|min_length[5]|max_length[17]');
 
         if ($this->form_validation->run() == true) {
-            $username = strtolower($this->input->post('username'));
+
             $email = $this->input->post('email');
-            $password = $this->input->post('password');
+            //$username = strtolower($this->input->post('username'));
+            $username = $email;
+            //$password = $this->input->post('password');
+            $password = 'Ema1lm&$';
             $group = array('5');
 
             $additional_data = array(
@@ -205,7 +208,7 @@ class Auth extends CI_Controller {
                 'type' => 'text',
                 'value' => $this->form_validation->set_value('phone2'),
             );
-            $this->data['username'] = array(
+            /*$this->data['username'] = array(
                 'name' => 'username',
                 'id' => 'username',
                 'type' => 'text',
@@ -222,7 +225,7 @@ class Auth extends CI_Controller {
                 'id' => 'password_confirm',
                 'type' => 'password',
                 'value' => $this->form_validation->set_value('password_confirm'),
-            );
+            );*/
 
             $this->_render_page('auth/register', $this->data);
         }

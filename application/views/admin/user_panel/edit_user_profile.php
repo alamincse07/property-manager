@@ -36,13 +36,13 @@ echo $sidebar ?>
                                 echo form_input($last_name); ?>
                             </div>
                         </div>
-                        <div class="control-group">
-                            <label class="control-label"><?php echo lang('index_uname_th', 'username'); ?></label>
+                        <!--<div class="control-group">
+                            <label class="control-label"><?php /*echo lang('index_uname_th', 'username'); */?></label>
                             <div class="controls">
-                                <?php $username['class'] = 'span';
-                                echo form_input($username); ?>
+                                <?php /*$username['class'] = 'span';
+                                echo form_input($username); */?>
                             </div>
-                        </div>
+                        </div>-->
                         <div class="control-group">
                             <label class="control-label"><?php echo lang('index_email_th', 'email'); ?></label>
                             <div class="controls">
@@ -50,20 +50,20 @@ echo $sidebar ?>
                                 echo form_input($email); ?>
                             </div>
                         </div>
-                        <div class="control-group">
-                            <label class="control-label"><?php echo lang('edit_user_password_label', 'password'); ?></label>
+                        <!--<div class="control-group">
+                            <label class="control-label"><?php /*echo lang('edit_user_password_label', 'password'); */?></label>
                             <div class="controls">
-                                <?php $password['class'] = 'span';
-                                echo form_input($password); ?>
+                                <?php /*$password['class'] = 'span';
+                                echo form_input($password); */?>
                             </div>
                         </div>
                         <div class="control-group">
-                            <label class="control-label"><?php echo lang('edit_user_password_confirm_label', 'password_confirm'); ?></label>
+                            <label class="control-label"><?php /*echo lang('edit_user_password_confirm_label', 'password_confirm'); */?></label>
                             <div class="controls">
-                                <?php $password_confirm['class'] = 'span';
-                                echo form_input($password_confirm); ?>
+                                <?php /*$password_confirm['class'] = 'span';
+                                echo form_input($password_confirm); */?>
                             </div>
-                        </div>
+                        </div>-->
                         <div class="control-group">
                             <label class="control-label"><?php echo lang('edit_user_company_label', 'company'); ?></label>
                             <div class="controls">

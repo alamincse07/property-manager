@@ -6032,7 +6032,7 @@ class admin extends CI_Controller
 
     public  function  SendupdatedDataForPreview($data='')
         {
-                 $url = 'http://staging:lotdadmin@staging.rentalhomes.com/site/importProperty';
+                 $url = 'http://staging.rentalhomes.com/site/importProperty';
 
             //die($data);
                   $ch = curl_init($url);

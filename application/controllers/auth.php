@@ -150,6 +150,7 @@ class Auth extends CI_Controller {
             //$username = strtolower($this->input->post('username'));
             $username = $email;
             //$password = $this->input->post('password');
+            //todo static need to changed after confirmation
             $password = 'Ema1lm&$';
             $group = array('5');
 
@@ -233,6 +234,7 @@ class Auth extends CI_Controller {
 
     //change password
     function change_password() {
+        die("not possible now :)");
         $this->data['pagetitle'] = lang('page_changepassword_title');
         
         $this->form_validation->set_rules('old', $this->lang->line('change_password_validation_old_password_label'), 'required');
@@ -296,6 +298,7 @@ class Auth extends CI_Controller {
 
     //forgot password
     function forgot_password() {
+        die("Contact  with system owner :)");
         if ($this->ion_auth->is_admin()) {
             //redirect them to the home page because they must be an administrator to view this
             redirect('/admin', 'refresh');

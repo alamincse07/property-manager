@@ -156,7 +156,19 @@ function stateList($activeState = NULL, $activeCountry = NULL) {
 
     $states['Canada'] = array(
         "" => "Select State/Province",
-        'Vancouver' => 'Vancouver',
+		'Alberta' => 'Alberta',
+		'British Columbia' => 'British Columbia',
+		'Manitoba' => 'Manitoba',
+		'New Brunswick' => 'New Brunswick',
+		'Newfoundland and Labrador' => 'Newfoundland and Labrador',
+		'Northwest Territories' => 'Northwest Territories',
+		'Nova Scotia' => 'Nova Scotia',
+		'Nunavut' => 'Nunavut',
+		'Ontario' => 'Ontario',
+		'Prince Edward Island' => 'Prince Edward Island',
+		'Quebec' => 'Quebec',
+		'Saskatchewan' => 'Saskatchewan',
+		'Yukon' => 'Yukon'
     );
 
 	if (($activeState != NULL) and ($activeCountry != NULL)) {

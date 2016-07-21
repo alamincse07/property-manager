@@ -6027,6 +6027,59 @@ class admin extends CI_Controller
        }
 
    }
+
+
+
+    public  function  SendupdatedDataForPreview($data='')
+        {
+                 $url = 'http://staging.rentalhomes.com/site/importPropertyManager';
+
+                  $ch = curl_init($url);
+                  curl_setopt($ch, CURLOPT_VERBOSE, 1);
+                  curl_setopt($ch, CURLOPT_HEADER, 0);
+                  curl_setopt($ch, CURLINFO_HEADER_OUT, false);
+                  curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+                  curl_setopt($ch, CURLOPT_POSTFIELDS, array('pm_data'=>$data));
+                  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);  //to suppress the curl output
+                    curl_setopt($ch, CURLOPT_USERPWD, 'staging:lotdadmin');
+                  $response = curl_exec($ch);
+                  die(json_encode($response));
+
+
+        }
+
+    public  function PreviewProperty($id){
+
+        $this->is_login(3);
+       // $id=(isset($_REQUEST['id']))?$_REQUEST['id']:0;
+        if($id > 0){
+
+            $property=$this->admin_estate_model->getPropertyData($id);
+            if(isset($property[0]['id'])){
+                $property_id=$property[0]['id'];
+                $property=$property[0];
+                $amenity_data = $this->admin_estate_model->getAmenityData($property_id);
+                $aminities=[];
+                foreach ($amenity_data as $new_aminity) {
+                    $aminities[] = $new_aminity->name;
+                }
+                $merge_data = array_merge($property, array('aminities' => $aminities));
+                $merge_data['unavailability']=$this->admin_estate_model->unavailability($property_id);
+                $merge_data['optional_rates']=$this->admin_estate_model->priceRatesEdit($property_id);
+
+                $processed_data['property'] = $this->ProcessStructureForFK($merge_data);
+                $this->SendupdatedDataForPreview(json_encode($processed_data));
+            }else{
+                die("no property result by this  id");
+            }
+
+
+        }else{
+            die("no property id");
+        }
+
+    }
+
     public function GetAllPropertyData()
     {
         $this->is_login(3);
@@ -6379,7 +6432,7 @@ return $array;
                // 'handicap' => 'Ask',
                 'bedroom_count' => $row['room'],
                 'check_out' => array(),
-                'property_name' => $row['title'],
+                'property_name' => ucwords($row['title']),
                 //'elder' => 'Ask',
 
                 'url' =>  $row['gsm'],

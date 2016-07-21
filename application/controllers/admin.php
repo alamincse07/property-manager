@@ -6043,6 +6043,8 @@ class admin extends CI_Controller
                   curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);  //to suppress the curl output
                     curl_setopt($ch, CURLOPT_USERPWD, 'staging:lotdadmin');
                   $response = curl_exec($ch);
+
+            return $response;
                   die(json_encode($response));
 
 
@@ -6068,7 +6070,9 @@ class admin extends CI_Controller
                 $merge_data['optional_rates']=$this->admin_estate_model->priceRatesEdit($property_id);
 
                 $processed_data['property'] = $this->ProcessStructureForFK($merge_data);
-                $this->SendupdatedDataForPreview(json_encode($processed_data));
+                $res=$this->SendupdatedDataForPreview(json_encode($processed_data));
+                \application\helpers\Generic::_setTrace($res);
+
             }else{
                 die("no property result by this  id");
             }

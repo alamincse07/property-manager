@@ -18,10 +18,11 @@
     echo form_input($identity);
     ?>
     <?php
-    $password = array_merge($password, array('placeholder' => lang('login_password_label'), 'class' => 'span5'));
+    $password = array_merge($password, array('placeholder' => 'Password', 'class' => 'span5'));
     echo form_input($password);
     ?>
-    <p class="forgotP"><a href="forgot_password"><?php echo lang('login_forgot_password'); ?></a></p>
+    <p class="forgotP">Password  private, ask admin to get a password</p>
+    <!--<p class="forgotP"><a href="forgot_password"><?php /*echo lang('login_forgot_password'); */?></a></p>-->
     <label class="checkbox">
         <?php
         echo form_checkbox('remember', '1', FALSE, 'id="remember"');

@@ -470,7 +470,7 @@ if ($success) {
         </div>
     </div>
     <div class="control-group required">
-        <label class="control-label">Number of Bedrooms</label>
+        <label class="control-label">Number of Bathroom</label>
 
         <div class="controls">
             <?php /*echo form_dropdown('bathroom', $bathroom, '', 'class="span"'); */?>

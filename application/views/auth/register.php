@@ -65,7 +65,8 @@
 	<div class="control-group">
 		<label class="control-label"></label>
       	<div class="controls">
-       		<?php echo form_submit('submit', lang('create_user_submit_btn'),'class="btn btn-success span3"');?>
+       		<?php echo form_submit('submit', 'Register','class="btn btn-success span3"');?>
+
       	    <!--<a href="<?php /*echo site_url() */?>/login" class="btn btn-info"><?php /*echo lang('login_submit_btn');*/?></a>-->
       	</div>
 	</div>

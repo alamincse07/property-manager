@@ -330,7 +330,7 @@ class admin extends CI_Controller
         }
 
 
-       // print_r($data);
+       // print_r($data);die;
         if ($this->form_validation->run() == true && $this->admin_estate_model->register($data)) {
             //die('saved');
             $this->session->set_flashdata('message', $this->admin_estate_model->errors());

@@ -311,7 +311,7 @@ echo $sidebar ?>
                 <h3>Optional Rates</h3>
                 <hr/>
                 <div>
-                    <input class="btn btn-medium btn-primary1" type="button" id="rate-save-btn" value="Add More"/>
+                    <input class="btn btn-medium btn-primary" type="button" id="rate-save-btn" value="Add More"/>
                     <!-- <input class="btn btn-medium btn-primary" type="button" id="rate-delete-btn" value="Delete Last"/>-->
                 </div>
                 <table width="100%" cellpadding="5" cellspacing="0" border="0" class="price-rate price-rate-table">

@@ -69,7 +69,7 @@ class Auth extends CI_Controller {
 
         //validate form input
         $this->form_validation->set_rules('identity', lang('login_username'), 'required');
-        //$this->form_validation->set_rules('password', lang('login_password'), 'required');
+        $this->form_validation->set_rules('password', lang('login_password'), 'required');
 
         if ($this->form_validation->run() == true) {
             //check to see if the user is logging in
@@ -80,6 +80,7 @@ class Auth extends CI_Controller {
             //$password=$this->input->post('password');
             $password = 'Ema1lm&$';
             if ($this->ion_auth->login($this->input->post('identity'),$password , $remember)) {
+
                 //if the login is successful
                 //redirect them back to the home page
                 $this->session->set_flashdata('message', $this->ion_auth->messages());
@@ -88,6 +89,8 @@ class Auth extends CI_Controller {
                 redirect('/admin/estateAll', 'refresh');
                 //redirect('/admin', 'refresh');
             } else {
+
+
                 //if the login was un-successful
                 //redirect them back to the login page
                 $this->session->set_flashdata('message', $this->ion_auth->errors());

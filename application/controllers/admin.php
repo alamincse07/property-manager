@@ -4,6 +4,8 @@ if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
 
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
 /**
  * @property admin_estate_model $admin_estate_model
@@ -6030,11 +6032,11 @@ class admin extends CI_Controller
 
 
 
-    public  function  SendupdatedDataForPreview($data='')
+   /* public  function  SendupdatedDataForPreview($data='')
         {
                  $url = 'http://staging.rentalhomes.com/site/importProperty';
 
-            //die($data);
+            print($data);
                   $ch = curl_init($url);
                   curl_setopt($ch, CURLOPT_VERBOSE, 1);
                   curl_setopt($ch, CURLOPT_HEADER, 0);
@@ -6049,7 +6051,7 @@ class admin extends CI_Controller
                   die(json_encode($response));
 
 
-        }
+        }*/
 
     public  function PreviewProperty($id){
 
@@ -6071,9 +6073,25 @@ class admin extends CI_Controller
                 $merge_data['optional_rates']=$this->admin_estate_model->priceRatesEdit($property_id);
 
                 $processed_data['property'] = $this->ProcessStructureForFK($merge_data);
-                $res=$this->SendupdatedDataForPreview(json_encode($processed_data));
+
+                // for import purpose
+                $solr_cls= new \application\helpers\solr_import();
+                $formatted_data=$solr_cls->PrepareSolrDataFormat($processed_data);
+
+               # \application\helpers\Generic::_setTrace($formatted_data);
+                // now save
+                $res=$solr_cls->importData($formatted_data);
+
+
+                if($res===true){
+                    header("Location: http://staging.rentalhomes.com/individual/PM-$property_id");
+                    exit;
+                }
+                //$res=solr_import::SendupdatedDataForPreview(json_encode($processed_data));
+
                 \application\helpers\Generic::_setTrace($res);
 
+                unset($solr_cls);
             }else{
                 die("no property result by this  id");
             }

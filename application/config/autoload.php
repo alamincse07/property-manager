@@ -64,7 +64,7 @@ $autoload['libraries'] = array('database','tmadmin','tmhome');
 |	$autoload['helper'] = array('url', 'file');
 */
 
-$autoload['helper'] = array('Generic','url');
+$autoload['helper'] = array('Generic','url','solr_import');
 
 
 /*

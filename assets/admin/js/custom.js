@@ -23,7 +23,7 @@ $(function () {
     });
 
     demos.confirm = function (e) {
-        bootbox.confirm("Are you sure to delete?", "No", "Yes", function (result) {
+        bootbox.confirm("Are you sure?", "No", "Yes", function (result) {
             var href = e.href;
             if (result) {
                 window.location = href;

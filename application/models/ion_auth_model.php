@@ -1633,7 +1633,7 @@ class Ion_auth_model extends CI_Model
 		    'level'                => $level
 		);
 
-        print_r($session_data);
+        //print_r($session_data);
 		$this->session->set_userdata($session_data);
 
 		$this->trigger_events('post_set_session');

@@ -594,7 +594,7 @@ echo $sidebar ?>
                                 echo lang('estate_add_publish') ?></label>
                             <label><?php echo form_radio($publish, '0', $publishAC2);
                                 echo lang('estate_add_draft') ?></label>
-                            <label><a onclick="GeneratePreview(<?=$id_estate?>)" href="#"> Preview </a> </label>
+
                         </div>
                     </div>
                     <div class="control-group"></div>

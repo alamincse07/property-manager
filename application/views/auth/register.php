@@ -25,30 +25,30 @@
 			<?php $last_name['class'] = 'span5'; echo form_input($last_name);?>
 		</div>
 	</div>
-	<div class="control-group">
-		<label class="control-label"><?php echo lang('create_user_validation_username_label', 'username');?></label>
+	<!--<div class="control-group">
+		<label class="control-label"><?php /*echo lang('create_user_validation_username_label', 'username');*/?></label>
 		<div class="controls">
-			<?php $username['class'] = 'span5'; echo form_input($username);?>
+			<?php /*$username['class'] = 'span5'; echo form_input($username);*/?>
 		</div>
-	</div>
+	</div>-->
 	<div class="control-group">
 		<label class="control-label"><?php echo lang('create_user_email_label', 'email');?></label>
 		<div class="controls">
 			<?php $email['class'] = 'span5'; echo form_input($email);?>
 		</div>
 	</div>
-	<div class="control-group">
-		<label class="control-label"><?php echo lang('create_user_password_label', 'password');?></label>
+	<!--<div class="control-group">
+		<label class="control-label"><?php /*echo lang('create_user_password_label', 'password');*/?></label>
 		<div class="controls">
-			<?php $password['class'] = 'span5'; echo form_input($password);?>
+			<?php /*$password['class'] = 'span5'; echo form_input($password);*/?>
 		</div>
 	</div>
 	<div class="control-group">
-		<label class="control-label"><?php echo lang('create_user_password_confirm_label', 'password_confirm');?></label>
+		<label class="control-label"><?php /*echo lang('create_user_password_confirm_label', 'password_confirm');*/?></label>
 		<div class="controls">
-			<?php $password_confirm['class'] = 'span5'; echo form_input($password_confirm);?>
+			<?php /*$password_confirm['class'] = 'span5'; echo form_input($password_confirm);*/?>
 		</div>
-	</div>
+	</div>-->
 	<div class="control-group">
 		<label class="control-label"><?php echo lang('create_user_company_label', 'company');?></label>
 		<div class="controls">

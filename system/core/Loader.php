@@ -147,7 +147,8 @@ class CI_Loader {
 		$this->_ci_classes = array();
 		$this->_ci_loaded_files = array();
 		$this->_ci_models = array();
-		$this->_base_classes =& is_loaded();
+		$loaded =  is_loaded();
+		$this->_base_classes =& $loaded;
 
 		$this->_ci_autoloader();
 

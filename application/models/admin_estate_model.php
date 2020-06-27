@@ -168,7 +168,7 @@ class admin_estate_model extends CI_Model
     public function getPropertyData($id=null)
     {
 
-        $condition=array('addedUserID'=>$this->ion_auth->get_user_id());
+       # $condition=array('addedUserID'=>$this->ion_auth->get_user_id());
 
         if($id){
             $condition['id']=$id ;
@@ -176,16 +176,16 @@ class admin_estate_model extends CI_Model
         }else{
             $condition['published']=1 ;
         }
-        #\application\helpers\Generic::_setTrace($condition);
+      #  \application\helpers\Generic::_setTrace($condition);
         $this->db->select('estate.*,estatetype.estateName');
         $this->db->from('estate');
         $this->db->join('estatetype', 'estate.estateTypeID = estatetype.eid', 'INNER');
         $this->db->where($condition);
         //$this->db->where('addedUserID', 1);
-        //$v= $this->db->get()->query();
+        #$v= $this->db->get()->query();
 
         $res= $this->db->get()->result();
-        //\application\helpers\Generic::_setTrace($res);
+       # \application\helpers\Generic::_setTrace($res);
         $res=json_decode(json_encode($res), true);
         return $res;
     }

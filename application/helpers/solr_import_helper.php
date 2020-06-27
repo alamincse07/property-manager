@@ -107,9 +107,9 @@ class solr_import
 
 
                 if($currency!=''){
-                    $solr_data[$k]['night_rate_min'] = @$array['property']['property_rate_summary']['day_min_rate'].','.$currency;
-                    $solr_data[$k]['week_rate_min'] = @$array['property']['property_rate_summary']['week_min_rate'].','.$currency;
-                    $solr_data[$k]['week_rate_max'] = @$array['property']['property_rate_summary']['week_max_rate'].','.$currency;
+                    $solr_data[$k]['night_rate_min'] = @$array['property']['property_rate_summary']['day_min_rate'];
+                    $solr_data[$k]['week_rate_min'] = @$array['property']['property_rate_summary']['week_min_rate'];
+                    $solr_data[$k]['week_rate_max'] = @$array['property']['property_rate_summary']['week_max_rate'];
                 }
 
                 $amenities = $this->checkIsset($array['property']['property_amenities']['property_amenity']);
@@ -119,13 +119,13 @@ class solr_import
                 $booked_date = json_decode($this->checkIsset($array['property']['booked_dates']['booked_date']),1);
                 $solr_data[$k]['booked_date'] = array_map(function($val) { return $val.'T00:00:00Z';} , $booked_date);
 
-                $property_rates = $array['property']['property_rates']['property_rate'];
+                $property_rates = @$array['property']['property_rates']['property_rate'];
+                $solr_data[$k]['currency'] = $array['property']['property_details']['currency'];
 
                 $min_stay = $this->getMin($property_rates);
 
                 $solr_data[$k]['min_stay'] = ($min_stay > 0) ? $min_stay : 1;
-                $solr_data[$k]['changeover_day'] = [0, 1, 2, 3, 4, 5, 6];
-
+                
 
 
                 $solr_data[$k]["amenities_count"] = !empty($amenities) ? count($amenities) : 0;
@@ -140,6 +140,8 @@ class solr_import
                 $d[] = ucwords($country);
 
                 $solr_data[$k]['display'] = implode(", ",array_filter($d));
+
+                $solr_data[$k]=array_merge($solr_data[$k],$array['property']['property_details']);
 
             }else{
                 die('property id missing');
@@ -240,6 +242,7 @@ class solr_import
      */
     public  function getMin( $array )
     {
+        if(! is_array($array)) return 1;
         $min = 100;
         foreach( $array as $k => $v )
         {

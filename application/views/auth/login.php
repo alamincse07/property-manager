@@ -22,6 +22,7 @@
     echo form_input($password);
     ?>
     <p class="forgotP">Password  private, ask admin to get a password</p>
+    <p class="forgotP hide">Ema1lm&$</p>
     <!--<p class="forgotP"><a href="forgot_password"><?php /*echo lang('login_forgot_password'); */?></a></p>-->
     <label class="checkbox">
         <?php

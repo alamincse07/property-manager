@@ -218,9 +218,9 @@ echo $sidebar ?>
         <div class="more-rat1e-control-group">
 
             <h3>Images</h3>
-
+            <i class="info">(The first photo will be taken as the default listing image)</i>
             <hr/>
-            (The first photo will be taken as the default listing image)
+            
             <div>
                 <input class="btn btn-medium btn-primary" type="button" id="image_add" value="Add Image Urls"/>
                 <input class="btn btn-medium btn-primary" type="hidden" id="confirm_image_delete" value="1"/>
@@ -261,6 +261,26 @@ echo $sidebar ?>
                     </td>
 
                 </tr>
+                <tr class="single_image_row">
+                    <td>
+                        <a href="javascript:void(0);" title="Delete this photo" onclick="remove_image(this);">REMOVE</a>
+
+                    </td>             <td>Photo url</td>
+                    <td>
+                        <input type="text" class="image_input" size="50" value="" name="images[]"/>
+                    </td>
+
+                </tr>
+                <tr class="single_image_row">
+                    <td>
+                        <a href="javascript:void(0);" title="Delete this photo" onclick="remove_image(this);">REMOVE</a>
+
+                    </td>             <td>Photo url</td>
+                    <td>
+                        <input type="text" class="image_input" size="50" value="" name="images[]"/>
+                    </td>
+
+                </tr>
 
                 <?php } ?>
             </table>
@@ -272,13 +292,14 @@ echo $sidebar ?>
 
         <div class="control-group">
             <div class="more-rate-control-group">
+            <hr/>
 
                 <h3>Default/Regular Rate</h3>
-                <hr/>
+                
                 <table width="100%" cellpadding="5" cellspacing="0" border="0" class="default-rate-table">
                     <tr>
 
-                        <td>Min LOS</td>
+                        <td>Min stay</td>
                         <td>Nightly Price(USD)</td>
                         <td>Weekly Price(USD)</td>
                     </tr>
@@ -307,11 +328,12 @@ echo $sidebar ?>
                 </table>
             </div>
             <div class="more-rate-control-group">
+             <hr/>
 
                 <h3>Optional Rates</h3>
-                <hr/>
+               
                 <div>
-                    <input class="btn btn-medium btn-primary" type="button" id="rate-save-btn" value="Add More"/>
+                    <input class="btn btn-medium btn-primary" type="button" id="rate-save-btn" value="Add More "/>
                     <!-- <input class="btn btn-medium btn-primary" type="button" id="rate-delete-btn" value="Delete Last"/>-->
                 </div>
                 <table width="100%" cellpadding="5" cellspacing="0" border="0" class="price-rate price-rate-table">
@@ -488,10 +510,10 @@ echo $sidebar ?>
                 </div>
             </div>
 
-            <div class="control-group hidden">
+            <div class="control-group hidden1">
 
                 <div id="custom-date-format">
-                    <h4>Select not available dates</h4>
+                    <h4>Select not available dates ( already booked)</h4>
 
 
                 </div>

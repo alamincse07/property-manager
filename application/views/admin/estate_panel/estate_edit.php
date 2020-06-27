@@ -9,11 +9,11 @@
 		<div class="span10 content">
 			<?php echo $hugemenu ?>
             <h1><?php echo lang('estate_edit'); ?></h1>
-            <?php if ($message) { ?>
+            <?php if (@$message) { ?>
                 <div class="alert alert-error">
                     <a class="close" data-dismiss="alert" href="#">x</a><?php echo $message; ?>
                 </div>
-            <?php } if ($success) { ?>
+            <?php } if (@$success) { ?>
                 <div class="alert alert-success">
                     <a class="close" data-dismiss="alert" href="#">x</a><?php echo $success; ?>
                 </div>
@@ -41,7 +41,7 @@
 
             <?php echo form_open('admin/estateEdit2/'.$id_estate,array('method' => 'get')); ?>
         <div class="widget">
-          <div class="widget-head"><h3 class="heading"><?php echo lang('blog_edit_widget_title') ." ". $title['value'] ?></h3></div>
+          <div class="widget-head"><h3 class="heading"><?php echo lang('blog_edit_widget_title') ." ". @$title['value'] ?></h3></div>
             <div class="widget-body">
                 
             <div class="row-fluid">
@@ -112,7 +112,7 @@
         </div>
         <!--/content-->
 
-    <script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&amp;sensor=false&amp;language=en"></script>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyCs1onskLKDONbA7dtWznaiVZQYh2PxWTo&sensor&amp;sensor=false&amp;language=en"></script>
     <script src="<?php echo base_url() ?>assets/admin/js/gmap3.min.js"></script>
 
 

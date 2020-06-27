@@ -36,26 +36,26 @@
 
 // The following values will probably need to be changed.
 
-/*
+
 $db['default']['username'] = "root";
 $db['default']['password'] = "";
-$db['default']['database'] = "property_manager_pro";
+$db['default']['database'] = "pm_local";
 // The following values can probably stay the same.
-$db['default']['hostname'] = "localhost";*/
+$db['default']['hostname'] = "localhost";
 
 
 
 
-
+/*
 $db['default']['username'] = "rdsproperty";
 $db['default']['password'] = "p@ssword";
 $db['default']['database'] = "property_manager_pro";
 // The following values can probably stay the same.
 $db['default']['hostname'] = "54.214.14.204";
+*/
 
 
-
-$db['default']['dbdriver'] = "mysql";
+$db['default']['dbdriver'] = "mysqli";
 $db['default']['dbprefix'] = "";
 $db['default']['pconnect'] = TRUE;
 $db['default']['db_debug'] = TRUE;

@@ -783,6 +783,7 @@ class Ion_auth_model extends CI_Model
 		$salt       = $this->store_salt ? $this->salt() : FALSE;
 		$password   = $this->hash_password($password, $salt);
 
+		print($salt);
 		// Users table.
 		$data = array(
 		    'username'   => $username,
@@ -794,6 +795,7 @@ class Ion_auth_model extends CI_Model
 		    'active'     => ($manual_activation === false ? 1 : 0)
 		);
 
+		print_r($data);
 		if ($this->store_salt)
 		{
 			$data['salt'] = $salt;

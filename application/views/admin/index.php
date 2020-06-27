@@ -1,5 +1,7 @@
 <?php
 echo $header;
+
+
 echo $sidebar
 ?>		
 <div class="span10 content">

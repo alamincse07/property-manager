@@ -116,7 +116,7 @@
         <!--/content-->
 
 
-    <script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&amp;sensor=false&amp;language=en"></script>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyCs1onskLKDONbA7dtWznaiVZQYh2PxWTo&amp;sensor=false&amp;language=en"></script>
     <script src="<?php echo base_url() ?>assets/admin/js/gmap3.min.js"></script>
 
 

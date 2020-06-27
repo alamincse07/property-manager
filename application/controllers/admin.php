@@ -3455,7 +3455,7 @@ class admin extends CI_Controller
             $id = $this->input->get('id');
         } else {
             $id = NULL;
-            break;
+           // break;
         }
 
         $this->load->model('sales_model');
@@ -3473,13 +3473,13 @@ class admin extends CI_Controller
             $id = $this->input->post('id');
         } else {
             $id = NULL;
-            break;
+            //break;
         }
         if ($this->input->post('to')) {
             $to = $this->input->post('to');
         } else {
             $to = NULL;
-            break;
+           // break;
         }
         if ($this->input->post('subject')) {
             $subject = $this->input->post('subject');
@@ -3512,13 +3512,13 @@ class admin extends CI_Controller
             $id = $this->input->post('id');
         } else {
             $id = NULL;
-            break;
+           // break;
         }
         if ($this->input->post('to')) {
             $to = $this->input->post('to');
         } else {
             $to = NULL;
-            break;
+         //   break;
         }
         if ($this->input->post('subject')) {
             $subject = $this->input->post('subject');
@@ -4860,13 +4860,13 @@ class admin extends CI_Controller
             $id = $this->input->post('id');
         } else {
             $id = NULL;
-            break;
+           // break;
         }
         if ($this->input->post('status')) {
             $status = $this->input->post('status');
         } else {
             $status = NULL;
-            break;
+          //  break;
         }
         if ($id && $status) {
             if ($this->sales_model->updateStatus($id, $status)) {
@@ -4886,13 +4886,13 @@ class admin extends CI_Controller
             $invoice_id = $this->input->post('invoice_id');
         } else {
             $invoice_id = NULL;
-            break;
+           // break;
         }
         if ($this->input->post('customer_id')) {
             $customer_id = $this->input->post('customer_id');
         } else {
             $customer_id = NULL;
-            break;
+          //  break;
         }
         if ($this->input->post('note')) {
             $note = $this->input->post('note');
@@ -4903,7 +4903,7 @@ class admin extends CI_Controller
             $amount = $this->input->post('amount');
         } else {
             $amount = NULL;
-            break;
+         //   break;
         }
         if ($invoice_id && $customer_id && $amount) {
             if ($this->sales_model->addPaument($invoice_id, $customer_id, $amount, $note)) {
@@ -6078,7 +6078,22 @@ class admin extends CI_Controller
                 $solr_cls= new \application\helpers\solr_import();
                 $formatted_data=$solr_cls->PrepareSolrDataFormat($processed_data);
 
-               # \application\helpers\Generic::_setTrace($formatted_data);
+
+                echo "                 
+                <h4>Thanks for your request. Our team will review your submission within 24 hours and approve if everything is ok.    </h4>
+                <hr/>
+               <h5> You will get a notification once the updates are available at lefttravel websites.</h5>
+             
+                <hr/>
+
+                 <hr/>
+
+                 Below is the submitted data.
+                  <hr/>
+                ";
+                \application\helpers\Generic::_setTrace(json_encode($formatted_data));
+
+
                 // now save
                 $res=$solr_cls->importData($formatted_data);
 

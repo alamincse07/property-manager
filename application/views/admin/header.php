@@ -115,7 +115,7 @@
 <div style="position: static;" class="navbar navbar-inverse">
     <div class="navbar-inner">
         <div class="container">
-            <a href="<?php echo site_url(); ?>admin" class="brand"> Vacation Rental CMS
+            <a href="<?php echo site_url(); ?>admin" class="brand"> LeftTravel Property Management
                 <?php //echo $main_title ?></a>
 
             <div class="nav-collapse collapse navbar-inverse-collapse">

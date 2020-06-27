@@ -192,8 +192,9 @@ if ($success) {
     <div class="more-rat1e-control-group">
 
         <h3>Image URLs</h3>
-        <hr/>
         (The first photo will be taken as the default listing image)
+        <hr/>
+        
         <div>
             <input class="btn btn-medium btn-primary" type="button" id="image_add" value="Add Images"/>
             <!-- <input class="btn btn-medium btn-primary" type="button" id="rate-delete-btn" value="Delete Last"/>-->
@@ -210,6 +211,26 @@ if ($success) {
                 </td>
 
             </tr>
+            <tr class="single_image_row">
+                    <td>
+                        <a href="javascript:void(0);" title="Delete this photo" onclick="remove_image(this);">REMOVE</a>
+
+                    </td>             <td>Photo url</td>
+                    <td>
+                        <input type="text" class="image_input" size="50" value="" name="images[]"/>
+                    </td>
+
+                </tr>
+                <tr class="single_image_row">
+                    <td>
+                        <a href="javascript:void(0);" title="Delete this photo" onclick="remove_image(this);">REMOVE</a>
+
+                    </td>             <td>Photo url</td>
+                    <td>
+                        <input type="text" class="image_input" size="50" value="" name="images[]"/>
+                    </td>
+
+                </tr>
         </table>
     </div>
 
@@ -221,13 +242,13 @@ if ($success) {
 
     <div class="control-group">
         <div class="more-rate-control-group">
-
-            <h3>Default/Regular Rate</h3>
             <hr/>
+            <h3>Default/Regular Rate</h3>
+            
             <table width="100%" cellpadding="5" cellspacing="0" border="0" class="default-rate-table">
                 <tr>
 
-                    <td>Min LOS</td>
+                    <td>Min stay</td>
                     <td>Nightly Price(USD)</td>
                     <td>Weekly Price(USD)</td>
                 </tr>
@@ -256,11 +277,11 @@ if ($success) {
             </table>
         </div>
         <div class="more-rate-control-group">
-
-            <h3>Optional Rates</h3>
             <hr/>
+            <h4>Optional Rates</h4>
+            
             <div>
-                <input class="btn btn-medium btn-primary" type="button" id="rate-save-btn" value="Add More"/>
+                <input class="btn btn-medium btn-primary" type="button" id="rate-save-btn" value=" Add More "/>
                <!-- <input class="btn btn-medium btn-primary" type="button" id="rate-delete-btn" value="Delete Last"/>-->
             </div>
             <table width="100%" cellpadding="5" cellspacing="0" border="0" class="price-rate price-rate-table">
@@ -269,7 +290,7 @@ if ($success) {
                     <td>Start Date</td>
                     <td>End Date</td>
                     <td>Rate Title</td>
-                    <td>Min LOS</td>
+                    <td>Min stay</td>
                     <td>Nightly Price(USD)</td>
                     <td>Weekly Price(USD)</td>
                 </tr>
@@ -435,9 +456,9 @@ if ($success) {
         </div>
     </div>-->
     <hr/>
-    <div class="control-group hidden">
+    <div class="control-group hidden1">
         <div id="custom-date-format">
-            <h4>Select not available dates</h4>
+            <h4>Select not available dates for this property( already booked)</h4>
 
 
         </div>
